@@ -40,7 +40,13 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product-image.product-image",
-      "mappedBy": "product_id"
+      "mappedBy": "product"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "inversedBy": "products"
     }
   }
 }

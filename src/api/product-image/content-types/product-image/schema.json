@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "product_id": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product.product",
-      "inversedBy": "product_images"
-    },
     "images": {
       "type": "media",
       "multiple": true,
@@ -28,6 +22,19 @@
     },
     "variant": {
       "type": "string"
+    },
+    "attributes": {
+      "type": "enumeration",
+      "enum": [
+        "Color",
+        "Material"
+      ]
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_images"
     }
   }
 }
