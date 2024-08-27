@@ -840,6 +840,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
     is_discount: Attribute.Boolean & Attribute.DefaultTo<false>;
     discount_price: Attribute.Decimal;
+    description: Attribute.RichText;
     product_images: Attribute.Relation<
       'api::product.product',
       'oneToMany',
@@ -850,7 +851,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::collection.collection'
     >;
-    description: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
