@@ -377,10 +377,10 @@ export interface ApiProductProduct extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required;
     price: Attribute.Decimal & Attribute.Required;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.Text;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     is_discount: Attribute.Boolean & Attribute.DefaultTo<false>;
     discount_price: Attribute.Decimal;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
