@@ -377,10 +377,14 @@ export interface ApiProductProduct extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required;
     price: Attribute.Decimal & Attribute.Required;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     is_discount: Attribute.Boolean & Attribute.DefaultTo<false>;
     discount_price: Attribute.Decimal;
     description: Attribute.RichText;
+    product_images: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::product-image.product-image'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -392,6 +396,43 @@ export interface ApiProductProduct extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductImageProductImage extends Schema.CollectionType {
+  collectionName: 'product_images';
+  info: {
+    singularName: 'product-image';
+    pluralName: 'product-images';
+    displayName: 'Product Image';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    product_id: Attribute.Relation<
+      'api::product-image.product-image',
+      'manyToOne',
+      'api::product.product'
+    >;
+    images: Attribute.Media<'images', true>;
+    variant: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-image.product-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-image.product-image',
       'oneToOne',
       'admin::user'
     > &
@@ -836,6 +877,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::product.product': ApiProductProduct;
+      'api::product-image.product-image': ApiProductImageProductImage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

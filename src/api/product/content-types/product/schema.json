@@ -25,17 +25,6 @@
       "unique": true,
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "is_discount": {
       "type": "boolean",
       "default": false,
@@ -46,6 +35,12 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "product_images": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-image.product-image",
+      "mappedBy": "product_id"
     }
   }
 }
