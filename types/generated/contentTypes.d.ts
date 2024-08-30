@@ -808,6 +808,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     >;
     thumbnail_desktop: Attribute.Media<'images'>;
     thumbnail_mobile: Attribute.Media<'images'>;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

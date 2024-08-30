@@ -36,6 +36,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "slug": {
+      "type": "string",
+      "regex": "/^\\S*$/"
     }
   }
 }
