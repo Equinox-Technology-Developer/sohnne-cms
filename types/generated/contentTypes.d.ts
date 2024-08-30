@@ -800,15 +800,15 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
+    name: Attribute.String & Attribute.Required;
     products: Attribute.Relation<
       'api::collection.collection',
       'manyToMany',
       'api::product.product'
     >;
-    thumbnail_desktop: Attribute.Media<'images'>;
-    banner: Attribute.Media<'images'>;
-    slug: Attribute.String;
+    thumbnail_desktop: Attribute.Media<'images'> & Attribute.Required;
+    banner: Attribute.Media<'images'> & Attribute.Required;
+    slug: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -885,9 +885,10 @@ export interface ApiProductImageProductImage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    images: Attribute.Media<'images', true>;
-    variant: Attribute.String;
-    attributes: Attribute.Enumeration<['Color', 'Material']>;
+    images: Attribute.Media<'images', true> & Attribute.Required;
+    variant: Attribute.String & Attribute.Required;
+    attributes: Attribute.Enumeration<['Color', 'Material']> &
+      Attribute.Required;
     product: Attribute.Relation<
       'api::product-image.product-image',
       'manyToOne',

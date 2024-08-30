@@ -15,20 +15,22 @@
     "images": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "variant": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "attributes": {
       "type": "enumeration",
       "enum": [
         "Color",
         "Material"
-      ]
+      ],
+      "required": true
     },
     "product": {
       "type": "relation",
