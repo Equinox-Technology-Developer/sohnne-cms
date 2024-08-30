@@ -794,6 +794,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     singularName: 'collection';
     pluralName: 'collections';
     displayName: 'Collection';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -805,6 +806,8 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'manyToMany',
       'api::product.product'
     >;
+    thumbnail_desktop: Attribute.Media<'images'>;
+    thumbnail_mobile: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
