@@ -29,7 +29,7 @@
         "images"
       ]
     },
-    "thumbnail_mobile": {
+    "banner": {
       "type": "media",
       "multiple": false,
       "required": false,

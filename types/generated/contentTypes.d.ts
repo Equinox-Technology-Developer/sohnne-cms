@@ -807,7 +807,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'api::product.product'
     >;
     thumbnail_desktop: Attribute.Media<'images'>;
-    thumbnail_mobile: Attribute.Media<'images'>;
+    banner: Attribute.Media<'images'>;
     slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
