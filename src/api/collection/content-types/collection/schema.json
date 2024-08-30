@@ -39,7 +39,7 @@
     },
     "slug": {
       "type": "string",
-      "regex": "/^\\S*$/"
+      "regex": "^\\S*$"
     }
   }
 }
