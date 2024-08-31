@@ -20,10 +20,6 @@
         "images"
       ]
     },
-    "variant": {
-      "type": "string",
-      "required": true
-    },
     "attributes": {
       "type": "enumeration",
       "enum": [
@@ -32,11 +28,19 @@
       ],
       "required": true
     },
+    "name": {
+      "type": "string",
+      "required": true
+    },
     "product": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::product.product",
-      "inversedBy": "product_images"
+      "inversedBy": "variant"
+    },
+    "variants": {
+      "type": "string",
+      "required": true
     }
   }
 }

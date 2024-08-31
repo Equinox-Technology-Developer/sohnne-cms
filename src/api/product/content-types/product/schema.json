@@ -33,12 +33,6 @@
     "discount_price": {
       "type": "decimal"
     },
-    "product_images": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product-image.product-image",
-      "mappedBy": "product"
-    },
     "collections": {
       "type": "relation",
       "relation": "manyToMany",
@@ -48,6 +42,12 @@
     "descriptions": {
       "type": "blocks",
       "required": true
+    },
+    "variant": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-image.product-image",
+      "mappedBy": "product"
     }
   }
 }

@@ -869,17 +869,17 @@ export interface ApiProductProduct extends Schema.CollectionType {
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
     is_discount: Attribute.Boolean & Attribute.DefaultTo<false>;
     discount_price: Attribute.Decimal;
-    product_images: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::product-image.product-image'
-    >;
     collections: Attribute.Relation<
       'api::product.product',
       'manyToMany',
       'api::collection.collection'
     >;
     descriptions: Attribute.Blocks & Attribute.Required;
+    variant: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::product-image.product-image'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -911,14 +911,15 @@ export interface ApiProductImageProductImage extends Schema.CollectionType {
   };
   attributes: {
     images: Attribute.Media<'images', true> & Attribute.Required;
-    variant: Attribute.String & Attribute.Required;
     attributes: Attribute.Enumeration<['Color', 'Material']> &
       Attribute.Required;
+    name: Attribute.String & Attribute.Required;
     product: Attribute.Relation<
       'api::product-image.product-image',
       'manyToOne',
       'api::product.product'
     >;
+    variants: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
