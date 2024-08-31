@@ -42,6 +42,10 @@
       "type": "string",
       "regex": "^\\S*$",
       "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
     }
   }
 }

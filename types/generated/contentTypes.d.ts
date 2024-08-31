@@ -833,6 +833,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     thumbnail_desktop: Attribute.Media<'images'> & Attribute.Required;
     banner: Attribute.Media<'images'> & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
