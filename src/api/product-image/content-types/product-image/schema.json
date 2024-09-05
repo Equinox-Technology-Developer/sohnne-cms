@@ -4,7 +4,7 @@
   "info": {
     "singularName": "product-image",
     "pluralName": "product-images",
-    "displayName": "Product Image",
+    "displayName": "Variant",
     "description": ""
   },
   "options": {
@@ -23,6 +23,7 @@
     "attributes": {
       "type": "enumeration",
       "enum": [
+        "General",
         "Color",
         "Material"
       ],

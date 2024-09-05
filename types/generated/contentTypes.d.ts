@@ -879,7 +879,7 @@ export interface ApiProductImageProductImage extends Schema.CollectionType {
   info: {
     singularName: 'product-image';
     pluralName: 'product-images';
-    displayName: 'Product Image';
+    displayName: 'Variant';
     description: '';
   };
   options: {
@@ -887,7 +887,7 @@ export interface ApiProductImageProductImage extends Schema.CollectionType {
   };
   attributes: {
     images: Attribute.Media<'images', true> & Attribute.Required;
-    attributes: Attribute.Enumeration<['Color', 'Material']> &
+    attributes: Attribute.Enumeration<['General', 'Color', 'Material']> &
       Attribute.Required;
     name: Attribute.String & Attribute.Required;
     product: Attribute.Relation<
