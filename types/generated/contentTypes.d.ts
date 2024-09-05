@@ -856,6 +856,13 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::product-image.product-image'
     >;
+    features: Attribute.Blocks;
+    Assembly: Attribute.Media<'videos'>;
+    care_instructions: Attribute.Blocks;
+    dimension_image_desktop: Attribute.Media<'images'>;
+    specifications: Attribute.Component<'table.table', true>;
+    dimension_image_mobile: Attribute.Media<'images'>;
+    dimensions: Attribute.Component<'table.table', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

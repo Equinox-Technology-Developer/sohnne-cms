@@ -48,6 +48,46 @@
       "relation": "oneToMany",
       "target": "api::product-image.product-image",
       "mappedBy": "product"
+    },
+    "features": {
+      "type": "blocks"
+    },
+    "Assembly": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "care_instructions": {
+      "type": "blocks"
+    },
+    "dimension_image_desktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "specifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "table.table"
+    },
+    "dimension_image_mobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "dimensions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "table.table"
     }
   }
 }
