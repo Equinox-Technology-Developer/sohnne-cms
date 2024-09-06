@@ -841,21 +841,14 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    price: Attribute.Decimal & Attribute.Required;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
-    is_discount: Attribute.Boolean & Attribute.DefaultTo<false>;
-    discount_price: Attribute.Decimal;
     collections: Attribute.Relation<
       'api::product.product',
       'manyToMany',
       'api::collection.collection'
     >;
     descriptions: Attribute.Blocks & Attribute.Required;
-    variant: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::product-image.product-image'
-    >;
+    variant: Attribute.Component<'product.variant', true>;
     features: Attribute.Blocks;
     Assembly: Attribute.Media<'videos'>;
     care_instructions: Attribute.Blocks;

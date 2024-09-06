@@ -16,22 +16,10 @@
       "type": "string",
       "required": true
     },
-    "price": {
-      "type": "decimal",
-      "required": true
-    },
     "slug": {
       "type": "string",
       "unique": true,
       "required": true
-    },
-    "is_discount": {
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    "discount_price": {
-      "type": "decimal"
     },
     "collections": {
       "type": "relation",
@@ -44,10 +32,9 @@
       "required": true
     },
     "variant": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product-image.product-image",
-      "mappedBy": "product"
+      "type": "component",
+      "repeatable": true,
+      "component": "product.variant"
     },
     "features": {
       "type": "blocks"
