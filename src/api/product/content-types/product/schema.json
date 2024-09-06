@@ -31,11 +31,6 @@
       "type": "blocks",
       "required": false
     },
-    "variant": {
-      "type": "component",
-      "repeatable": true,
-      "component": "product.variant"
-    },
     "features": {
       "type": "blocks"
     },
@@ -75,6 +70,11 @@
       "type": "component",
       "repeatable": true,
       "component": "table.table"
+    },
+    "variants": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.variant"
     }
   }
 }

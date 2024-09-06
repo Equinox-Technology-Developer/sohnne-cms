@@ -848,7 +848,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::collection.collection'
     >;
     descriptions: Attribute.Blocks;
-    variant: Attribute.Component<'product.variant', true>;
     features: Attribute.Blocks;
     Assembly: Attribute.Media<'videos'>;
     care_instructions: Attribute.Blocks;
@@ -856,6 +855,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     specifications: Attribute.Component<'table.table', true>;
     dimension_image_mobile: Attribute.Media<'images'>;
     dimensions: Attribute.Component<'table.table', true>;
+    variants: Attribute.Component<'product.variant', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -890,11 +890,6 @@ export interface ApiProductImageProductImage extends Schema.CollectionType {
     attributes: Attribute.Enumeration<['General', 'Color', 'Material']> &
       Attribute.Required;
     name: Attribute.String & Attribute.Required;
-    product: Attribute.Relation<
-      'api::product-image.product-image',
-      'manyToOne',
-      'api::product.product'
-    >;
     variants: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
