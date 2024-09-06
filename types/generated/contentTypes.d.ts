@@ -847,7 +847,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::collection.collection'
     >;
-    descriptions: Attribute.Blocks & Attribute.Required;
+    descriptions: Attribute.Blocks;
     variant: Attribute.Component<'product.variant', true>;
     features: Attribute.Blocks;
     Assembly: Attribute.Media<'videos'>;

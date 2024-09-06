@@ -29,7 +29,7 @@
     },
     "descriptions": {
       "type": "blocks",
-      "required": true
+      "required": false
     },
     "variant": {
       "type": "component",
