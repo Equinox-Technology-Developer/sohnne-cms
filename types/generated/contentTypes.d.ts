@@ -875,41 +875,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
-export interface ApiProductImageProductImage extends Schema.CollectionType {
-  collectionName: 'product_images';
-  info: {
-    singularName: 'product-image';
-    pluralName: 'product-images';
-    displayName: 'Variant';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    images: Attribute.Media<'images', true> & Attribute.Required;
-    attributes: Attribute.Enumeration<['General', 'Color', 'Material']> &
-      Attribute.Required;
-    name: Attribute.String & Attribute.Required;
-    variants: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product-image.product-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product-image.product-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -930,7 +895,6 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::collection.collection': ApiCollectionCollection;
       'api::product.product': ApiProductProduct;
-      'api::product-image.product-image': ApiProductImageProductImage;
     }
   }
 }
