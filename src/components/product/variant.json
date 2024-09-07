@@ -2,7 +2,8 @@
   "collectionName": "components_product_variants",
   "info": {
     "displayName": "Variant",
-    "icon": "archive"
+    "icon": "archive",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,10 +14,12 @@
         "Color",
         "Material"
       ],
-      "default": "General"
+      "default": "General",
+      "required": true
     },
     "value": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "price": {
       "type": "decimal",
@@ -24,17 +27,20 @@
     },
     "is_discount": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
     },
     "discount_price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

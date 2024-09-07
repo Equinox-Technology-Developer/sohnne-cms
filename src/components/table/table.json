@@ -2,15 +2,18 @@
   "collectionName": "components_table_tables",
   "info": {
     "displayName": "Table",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": false
     },
     "content": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

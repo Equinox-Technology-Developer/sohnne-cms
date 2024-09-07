@@ -847,15 +847,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::collection.collection'
     >;
-    descriptions: Attribute.Blocks;
-    features: Attribute.Blocks;
-    Assembly: Attribute.Media<'videos'>;
-    care_instructions: Attribute.Blocks;
-    dimension_image_desktop: Attribute.Media<'images'>;
-    specifications: Attribute.Component<'table.table', true>;
-    dimension_image_mobile: Attribute.Media<'images'>;
-    dimensions: Attribute.Component<'table.table', true>;
-    variants: Attribute.Component<'product.variant', true>;
+    descriptions: Attribute.Blocks & Attribute.Required;
+    features: Attribute.Blocks & Attribute.Required;
+    Assembly: Attribute.Media<'videos'> & Attribute.Required;
+    care_instructions: Attribute.Blocks & Attribute.Required;
+    dimension_image_desktop: Attribute.Media<'images'> & Attribute.Required;
+    specifications: Attribute.Component<'table.table', true> &
+      Attribute.Required;
+    dimension_image_mobile: Attribute.Media<'images'> & Attribute.Required;
+    dimensions: Attribute.Component<'table.table', true> & Attribute.Required;
+    variants: Attribute.Component<'product.variant', true> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

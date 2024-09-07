@@ -29,26 +29,28 @@
     },
     "descriptions": {
       "type": "blocks",
-      "required": false
+      "required": true
     },
     "features": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     },
     "Assembly": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "videos"
       ]
     },
     "care_instructions": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     },
     "dimension_image_desktop": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -56,12 +58,13 @@
     "specifications": {
       "type": "component",
       "repeatable": true,
-      "component": "table.table"
+      "component": "table.table",
+      "required": true
     },
     "dimension_image_mobile": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -69,12 +72,14 @@
     "dimensions": {
       "type": "component",
       "repeatable": true,
-      "component": "table.table"
+      "component": "table.table",
+      "required": true
     },
     "variants": {
       "type": "component",
       "repeatable": true,
-      "component": "product.variant"
+      "component": "product.variant",
+      "required": true
     }
   }
 }
