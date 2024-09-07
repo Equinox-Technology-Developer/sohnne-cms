@@ -80,6 +80,11 @@
       "repeatable": true,
       "component": "product.variant",
       "required": true
+    },
+    "icon_features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.icons"
     }
   }
 }

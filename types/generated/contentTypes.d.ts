@@ -431,6 +431,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     dimension_image_mobile: Attribute.Media<'images'> & Attribute.Required;
     dimensions: Attribute.Component<'table.table', true> & Attribute.Required;
     variants: Attribute.Component<'product.variant', true> & Attribute.Required;
+    icon_features: Attribute.Component<'product.icons', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
