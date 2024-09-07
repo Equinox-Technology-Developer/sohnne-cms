@@ -9,7 +9,7 @@ export interface TableTable extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    content: Attribute.String & Attribute.Required;
+    content: Attribute.String;
   };
 }
 
