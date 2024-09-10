@@ -362,94 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiCollectionCollection extends Schema.CollectionType {
-  collectionName: 'collections';
-  info: {
-    singularName: 'collection';
-    pluralName: 'collections';
-    displayName: 'Collection';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    products: Attribute.Relation<
-      'api::collection.collection',
-      'manyToMany',
-      'api::product.product'
-    >;
-    thumbnail_desktop: Attribute.Media<'images'> & Attribute.Required;
-    banner: Attribute.Media<'images'> & Attribute.Required;
-    slug: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::collection.collection',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::collection.collection',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiProductProduct extends Schema.CollectionType {
-  collectionName: 'products';
-  info: {
-    singularName: 'product';
-    pluralName: 'products';
-    displayName: 'Product';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    slug: Attribute.String & Attribute.Required & Attribute.Unique;
-    collections: Attribute.Relation<
-      'api::product.product',
-      'manyToMany',
-      'api::collection.collection'
-    >;
-    descriptions: Attribute.Blocks & Attribute.Required;
-    features: Attribute.Blocks & Attribute.Required;
-    Assembly: Attribute.Media<'videos'>;
-    care_instructions: Attribute.Blocks & Attribute.Required;
-    dimension_image_desktop: Attribute.Media<'images'> & Attribute.Required;
-    specifications: Attribute.Component<'table.table', true> &
-      Attribute.Required;
-    dimension_image_mobile: Attribute.Media<'images'> & Attribute.Required;
-    dimensions: Attribute.Component<'table.table', true> & Attribute.Required;
-    variants: Attribute.Component<'product.variant', true> & Attribute.Required;
-    icon_features: Attribute.Component<'product.icons', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -876,6 +788,139 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCollectionCollection extends Schema.CollectionType {
+  collectionName: 'collections';
+  info: {
+    singularName: 'collection';
+    pluralName: 'collections';
+    displayName: 'Collection';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    products: Attribute.Relation<
+      'api::collection.collection',
+      'manyToMany',
+      'api::product.product'
+    >;
+    thumbnail_desktop: Attribute.Media<'images'> & Attribute.Required;
+    banner: Attribute.Media<'images'> & Attribute.Required;
+    slug: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::collection.collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::collection.collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Home Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_banner: Attribute.Component<'home-page.hero-banner'>;
+    affirm_section: Attribute.Component<'home-page.affirm-section'>;
+    best_sellers: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToMany',
+      'api::product.product'
+    >;
+    video_banner: Attribute.Component<'home-page.video-banner'>;
+    inspired_design: Attribute.Component<'home-page.inspired-design'>;
+    customer_review: Attribute.Component<'home-page.customer-review'>;
+    payment_section: Attribute.Component<'home-page.payment-section'>;
+    trusted_by: Attribute.Component<'home-page.trusted-by-section'>;
+    services: Attribute.Component<'home-page.trusted-by-section', true>;
+    b2b_section: Attribute.Component<'home-page.b2-b-section'>;
+    instagram_feed: Attribute.Component<'home-page.instagram-feed'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    collections: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::collection.collection'
+    >;
+    descriptions: Attribute.Blocks & Attribute.Required;
+    features: Attribute.Blocks & Attribute.Required;
+    Assembly: Attribute.Media<'videos'>;
+    care_instructions: Attribute.Blocks & Attribute.Required;
+    dimension_image_desktop: Attribute.Media<'images'> & Attribute.Required;
+    specifications: Attribute.Component<'table.table', true> &
+      Attribute.Required;
+    dimension_image_mobile: Attribute.Media<'images'> & Attribute.Required;
+    dimensions: Attribute.Component<'table.table', true> & Attribute.Required;
+    variants: Attribute.Component<'product.variant', true> & Attribute.Required;
+    icon_features: Attribute.Component<'product.icons', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -886,8 +931,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::collection.collection': ApiCollectionCollection;
-      'api::product.product': ApiProductProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -896,6 +939,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::collection.collection': ApiCollectionCollection;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::product.product': ApiProductProduct;
     }
   }
 }

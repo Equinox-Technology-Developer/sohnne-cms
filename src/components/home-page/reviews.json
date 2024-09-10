@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_home_page_reviews",
+  "info": {
+    "displayName": "Reviews"
+  },
+  "options": {},
+  "attributes": {
+    "reviews": {
+      "type": "text"
+    },
+    "profile_picture": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "product_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_location": {
+      "type": "string"
+    }
+  }
+}

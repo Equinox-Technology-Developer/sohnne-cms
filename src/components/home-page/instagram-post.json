@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_page_instagram_posts",
+  "info": {
+    "displayName": "Instagram Post"
+  },
+  "options": {},
+  "attributes": {
+    "instagram_url": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

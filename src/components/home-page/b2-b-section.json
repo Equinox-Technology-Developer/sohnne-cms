@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_page_b2_b_sections",
+  "info": {
+    "displayName": "B2B Section",
+    "icon": "shoppingCart"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

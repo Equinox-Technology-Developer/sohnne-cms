@@ -1,0 +1,80 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_banner": {
+      "displayName": "Hero Banner",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.hero-banner"
+    },
+    "affirm_section": {
+      "displayName": "Affirm Section",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.affirm-section"
+    },
+    "best_sellers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "video_banner": {
+      "displayName": "Video Banner",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.video-banner"
+    },
+    "inspired_design": {
+      "displayName": "Inspired Design",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.inspired-design"
+    },
+    "customer_review": {
+      "displayName": "Customer Review",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.customer-review"
+    },
+    "payment_section": {
+      "displayName": "Payment Section",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.payment-section"
+    },
+    "trusted_by": {
+      "displayName": "Trusted By Section",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.trusted-by-section"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home-page.trusted-by-section"
+    },
+    "b2b_section": {
+      "displayName": "B2B Section",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.b2-b-section"
+    },
+    "instagram_feed": {
+      "displayName": "Instagram Feed",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.instagram-feed"
+    }
+  }
+}
