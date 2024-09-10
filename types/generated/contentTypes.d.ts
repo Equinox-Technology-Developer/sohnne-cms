@@ -423,7 +423,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     descriptions: Attribute.Blocks & Attribute.Required;
     features: Attribute.Blocks & Attribute.Required;
-    Assembly: Attribute.Media<'videos'> & Attribute.Required;
+    Assembly: Attribute.Media<'videos'>;
     care_instructions: Attribute.Blocks & Attribute.Required;
     dimension_image_desktop: Attribute.Media<'images'> & Attribute.Required;
     specifications: Attribute.Component<'table.table', true> &
