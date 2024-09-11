@@ -70,7 +70,7 @@ export interface HomePageTrustedBySection extends Schema.Component {
   attributes: {
     heading: Attribute.String;
     subheading: Attribute.Text;
-    image: Attribute.Media<'images'>;
+    image: Attribute.Media<'images', true>;
   };
 }
 
