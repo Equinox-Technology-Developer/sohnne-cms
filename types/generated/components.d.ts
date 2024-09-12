@@ -1,18 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface TableTable extends Schema.Component {
-  collectionName: 'components_table_tables';
-  info: {
-    displayName: 'Table';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.String;
-  };
-}
-
 export interface ProductVariant extends Schema.Component {
   collectionName: 'components_product_variants';
   info: {
@@ -46,6 +33,19 @@ export interface ProductIcons extends Schema.Component {
         maxLength: 25;
       }>;
     icon: Attribute.Media<'images'>;
+  };
+}
+
+export interface TableTable extends Schema.Component {
+  collectionName: 'components_table_tables';
+  info: {
+    displayName: 'Table';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.String;
   };
 }
 
@@ -170,10 +170,12 @@ export interface HomePageHeroBanner extends Schema.Component {
   collectionName: 'components_home_page_hero_banners';
   info: {
     displayName: 'Hero Banner';
+    description: '';
   };
   attributes: {
-    banner: Attribute.Media<'images' | 'videos', true>;
+    banner_desktop: Attribute.Media<'images', true>;
     heading: Attribute.String;
+    banner_mobile: Attribute.Media<'images', true>;
   };
 }
 
@@ -219,9 +221,9 @@ export interface HomePageAffirmSection extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'table.table': TableTable;
       'product.variant': ProductVariant;
       'product.icons': ProductIcons;
+      'table.table': TableTable;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
       'home-page.services-section': HomePageServicesSection;

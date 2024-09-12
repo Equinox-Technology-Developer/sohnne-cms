@@ -1,20 +1,28 @@
 {
   "collectionName": "components_home_page_hero_banners",
   "info": {
-    "displayName": "Hero Banner"
+    "displayName": "Hero Banner",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "banner": {
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
+    "banner_desktop": {
       "type": "media",
-      "multiple": true
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "heading": {
       "type": "string"
+    },
+    "banner_mobile": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
