@@ -46,6 +46,10 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "show_collections": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

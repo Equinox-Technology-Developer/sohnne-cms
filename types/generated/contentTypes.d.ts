@@ -810,6 +810,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     banner: Attribute.Media<'images'> & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
+    show_collections: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
