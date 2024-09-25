@@ -49,6 +49,18 @@ export interface ProductIcons extends Schema.Component {
   };
 }
 
+export interface ProductDetailProducts extends Schema.Component {
+  collectionName: 'components_product_detail_products';
+  info: {
+    displayName: 'Detail Products';
+  };
+  attributes: {
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    heading: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface HomePageVideoBanner extends Schema.Component {
   collectionName: 'components_home_page_video_banners';
   info: {
@@ -224,6 +236,7 @@ declare module '@strapi/types' {
       'table.table': TableTable;
       'product.variant': ProductVariant;
       'product.icons': ProductIcons;
+      'product.detail-products': ProductDetailProducts;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
       'home-page.services-section': HomePageServicesSection;
