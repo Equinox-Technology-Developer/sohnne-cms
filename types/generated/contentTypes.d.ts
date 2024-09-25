@@ -904,6 +904,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     dimensions: Attribute.Component<'table.table', true> & Attribute.Required;
     variants: Attribute.Component<'product.variant', true> & Attribute.Required;
     icon_features: Attribute.Component<'product.icons', true>;
+    detail_products: Attribute.Component<'product.detail-products', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
