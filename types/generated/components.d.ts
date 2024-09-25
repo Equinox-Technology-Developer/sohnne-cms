@@ -38,10 +38,12 @@ export interface ProductInTheBox extends Schema.Component {
   collectionName: 'components_product_in_the_boxes';
   info: {
     displayName: 'In The Box';
+    description: '';
   };
   attributes: {
+    heading: Attribute.String;
     img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    item_name: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    item_name: Attribute.String;
   };
 }
 

@@ -1,10 +1,14 @@
 {
   "collectionName": "components_product_in_the_boxes",
   "info": {
-    "displayName": "In The Box"
+    "displayName": "In The Box",
+    "description": ""
   },
   "options": {},
   "attributes": {
+    "heading": {
+      "type": "string"
+    },
     "img": {
       "allowedTypes": [
         "images",
@@ -16,14 +20,7 @@
       "multiple": true
     },
     "item_name": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      "type": "string"
     }
   }
 }
