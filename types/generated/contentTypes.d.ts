@@ -905,6 +905,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     variants: Attribute.Component<'product.variant', true> & Attribute.Required;
     icon_features: Attribute.Component<'product.icons', true>;
     detail_products: Attribute.Component<'product.detail-products', true>;
+    in_the_box: Attribute.Component<'product.in-the-box', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

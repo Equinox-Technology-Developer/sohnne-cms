@@ -34,6 +34,17 @@ export interface ProductVariant extends Schema.Component {
   };
 }
 
+export interface ProductInTheBox extends Schema.Component {
+  collectionName: 'components_product_in_the_boxes';
+  info: {
+    displayName: 'In The Box';
+  };
+  attributes: {
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    item_name: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
 export interface ProductIcons extends Schema.Component {
   collectionName: 'components_product_icons';
   info: {
@@ -235,6 +246,7 @@ declare module '@strapi/types' {
     export interface Components {
       'table.table': TableTable;
       'product.variant': ProductVariant;
+      'product.in-the-box': ProductInTheBox;
       'product.icons': ProductIcons;
       'product.detail-products': ProductDetailProducts;
       'home-page.video-banner': HomePageVideoBanner;

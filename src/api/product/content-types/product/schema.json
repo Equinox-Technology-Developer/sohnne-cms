@@ -91,6 +91,12 @@
       "type": "component",
       "repeatable": true,
       "component": "product.detail-products"
+    },
+    "in_the_box": {
+      "displayName": "In The Box",
+      "type": "component",
+      "repeatable": true,
+      "component": "product.in-the-box"
     }
   }
 }
