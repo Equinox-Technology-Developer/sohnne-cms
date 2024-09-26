@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_product_comparison_texts",
+  "info": {
+    "displayName": "Comparison Text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sohnne_value": {
+      "type": "string"
+    },
+    "competitor_value": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.competitor-name"
+    }
+  }
+}

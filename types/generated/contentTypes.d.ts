@@ -906,6 +906,15 @@ export interface ApiProductProduct extends Schema.CollectionType {
     icon_features: Attribute.Component<'product.icons', true>;
     detail_products: Attribute.Component<'product.detail-products', true>;
     in_the_box: Attribute.Component<'product.in-the-box', true>;
+    table_comparison: Attribute.DynamicZone<
+      ['product.comparison-boolean', 'product.comparison-text']
+    >;
+    competitor_name: Attribute.Component<'product.competitor-name', true>;
+    products: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::product.product'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

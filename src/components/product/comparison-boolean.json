@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_product_comparison_booleans",
+  "info": {
+    "displayName": "Comparison Boolean"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sohnne_value": {
+      "type": "boolean"
+    },
+    "competitor_value": {
+      "displayName": "competitor",
+      "type": "component",
+      "repeatable": true,
+      "component": "product.competitor"
+    }
+  }
+}

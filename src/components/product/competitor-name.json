@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_product_competitor_names",
+  "info": {
+    "displayName": "Competitor Name"
+  },
+  "options": {},
+  "attributes": {
+    "brand_name": {
+      "type": "string"
+    }
+  }
+}

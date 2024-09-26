@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_product_competitors",
+  "info": {
+    "displayName": "competitor boolean",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "competitor_boolean": {
+      "type": "boolean"
+    }
+  }
+}

@@ -97,6 +97,24 @@
       "type": "component",
       "repeatable": true,
       "component": "product.in-the-box"
+    },
+    "table_comparison": {
+      "type": "dynamiczone",
+      "components": [
+        "product.comparison-boolean",
+        "product.comparison-text"
+      ]
+    },
+    "competitor_name": {
+      "displayName": "Competitor Name",
+      "type": "component",
+      "repeatable": true,
+      "component": "product.competitor-name"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
     }
   }
 }

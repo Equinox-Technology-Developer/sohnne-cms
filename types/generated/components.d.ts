@@ -72,6 +72,52 @@ export interface ProductDetailProducts extends Schema.Component {
   };
 }
 
+export interface ProductCompetitor extends Schema.Component {
+  collectionName: 'components_product_competitors';
+  info: {
+    displayName: 'competitor boolean';
+    description: '';
+  };
+  attributes: {
+    competitor_boolean: Attribute.Boolean;
+  };
+}
+
+export interface ProductCompetitorName extends Schema.Component {
+  collectionName: 'components_product_competitor_names';
+  info: {
+    displayName: 'Competitor Name';
+  };
+  attributes: {
+    brand_name: Attribute.String;
+  };
+}
+
+export interface ProductComparisonText extends Schema.Component {
+  collectionName: 'components_product_comparison_texts';
+  info: {
+    displayName: 'Comparison Text';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    sohnne_value: Attribute.String;
+    competitor_value: Attribute.Component<'product.competitor-name', true>;
+  };
+}
+
+export interface ProductComparisonBoolean extends Schema.Component {
+  collectionName: 'components_product_comparison_booleans';
+  info: {
+    displayName: 'Comparison Boolean';
+  };
+  attributes: {
+    title: Attribute.String;
+    sohnne_value: Attribute.Boolean;
+    competitor_value: Attribute.Component<'product.competitor', true>;
+  };
+}
+
 export interface HomePageVideoBanner extends Schema.Component {
   collectionName: 'components_home_page_video_banners';
   info: {
@@ -249,6 +295,10 @@ declare module '@strapi/types' {
       'product.in-the-box': ProductInTheBox;
       'product.icons': ProductIcons;
       'product.detail-products': ProductDetailProducts;
+      'product.competitor': ProductCompetitor;
+      'product.competitor-name': ProductCompetitorName;
+      'product.comparison-text': ProductComparisonText;
+      'product.comparison-boolean': ProductComparisonBoolean;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
       'home-page.services-section': HomePageServicesSection;
