@@ -915,6 +915,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::product.product'
     >;
+    instagram_feed: Attribute.Component<'home-page.instagram-feed'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

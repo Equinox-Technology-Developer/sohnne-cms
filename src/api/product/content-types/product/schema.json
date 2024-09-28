@@ -115,6 +115,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
+    },
+    "instagram_feed": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.instagram-feed"
     }
   }
 }
