@@ -120,6 +120,12 @@
       "type": "component",
       "repeatable": false,
       "component": "home-page.instagram-feed"
+    },
+    "product_recommendation": {
+      "displayName": "Product Recommendation",
+      "type": "component",
+      "repeatable": false,
+      "component": "product.product-recommendation"
     }
   }
 }

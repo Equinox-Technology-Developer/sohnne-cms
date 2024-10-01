@@ -916,6 +916,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::product.product'
     >;
     instagram_feed: Attribute.Component<'home-page.instagram-feed'>;
+    product_recommendation: Attribute.Component<'product.product-recommendation'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

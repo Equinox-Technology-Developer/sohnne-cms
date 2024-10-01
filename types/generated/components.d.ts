@@ -34,6 +34,22 @@ export interface ProductVariant extends Schema.Component {
   };
 }
 
+export interface ProductProductRecommendation extends Schema.Component {
+  collectionName: 'components_product_product_recommendations';
+  info: {
+    displayName: 'Product Recommendation';
+    description: '';
+  };
+  attributes: {
+    heading: Attribute.String;
+    products: Attribute.Relation<
+      'product.product-recommendation',
+      'oneToMany',
+      'api::product.product'
+    >;
+  };
+}
+
 export interface ProductInTheBox extends Schema.Component {
   collectionName: 'components_product_in_the_boxes';
   info: {
@@ -293,6 +309,7 @@ declare module '@strapi/types' {
     export interface Components {
       'table.table': TableTable;
       'product.variant': ProductVariant;
+      'product.product-recommendation': ProductProductRecommendation;
       'product.in-the-box': ProductInTheBox;
       'product.icons': ProductIcons;
       'product.detail-products': ProductDetailProducts;
