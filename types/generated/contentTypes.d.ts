@@ -910,11 +910,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       ['product.comparison-boolean', 'product.comparison-text']
     >;
     competitor_name: Attribute.Component<'product.competitor-name', true>;
-    products: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::product.product'
-    >;
     instagram_feed: Attribute.Component<'home-page.instagram-feed'>;
     product_recommendation: Attribute.Component<'product.product-recommendation'>;
     createdAt: Attribute.DateTime;

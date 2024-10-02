@@ -111,11 +111,6 @@
       "repeatable": true,
       "component": "product.competitor-name"
     },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
-    },
     "instagram_feed": {
       "type": "component",
       "repeatable": false,
