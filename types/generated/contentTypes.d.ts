@@ -912,6 +912,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     competitor_name: Attribute.Component<'product.competitor-name', true>;
     instagram_feed: Attribute.Component<'home-page.instagram-feed'>;
     product_recommendation: Attribute.Component<'product.product-recommendation'>;
+    quote_card: Attribute.Component<'product.quote-card'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

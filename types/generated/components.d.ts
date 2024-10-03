@@ -34,6 +34,18 @@ export interface ProductVariant extends Schema.Component {
   };
 }
 
+export interface ProductQuoteCard extends Schema.Component {
+  collectionName: 'components_product_quote_cards';
+  info: {
+    displayName: 'Quote Card';
+  };
+  attributes: {
+    quot: Attribute.Text;
+    author: Attribute.String;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ProductProductRecommendation extends Schema.Component {
   collectionName: 'components_product_product_recommendations';
   info: {
@@ -309,6 +321,7 @@ declare module '@strapi/types' {
     export interface Components {
       'table.table': TableTable;
       'product.variant': ProductVariant;
+      'product.quote-card': ProductQuoteCard;
       'product.product-recommendation': ProductProductRecommendation;
       'product.in-the-box': ProductInTheBox;
       'product.icons': ProductIcons;

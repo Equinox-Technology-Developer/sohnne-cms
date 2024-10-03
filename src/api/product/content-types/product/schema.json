@@ -121,6 +121,12 @@
       "type": "component",
       "repeatable": false,
       "component": "product.product-recommendation"
+    },
+    "quote_card": {
+      "displayName": "Quote Card",
+      "type": "component",
+      "repeatable": false,
+      "component": "product.quote-card"
     }
   }
 }

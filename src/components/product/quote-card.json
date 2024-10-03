@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_quote_cards",
+  "info": {
+    "displayName": "Quote Card"
+  },
+  "options": {},
+  "attributes": {
+    "quot": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
