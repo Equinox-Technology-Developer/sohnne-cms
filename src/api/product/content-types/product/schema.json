@@ -127,6 +127,18 @@
       "type": "component",
       "repeatable": false,
       "component": "product.quote-card"
+    },
+    "estimated_delivery_product": {
+      "type": "enumeration",
+      "enum": [
+        "Within 2-5 Business Days",
+        "Within 7-10 Business Days",
+        "Within 10-20 Business Days",
+        "Within 20-25 Business Days",
+        "Within 3-4 Weeks",
+        "Within 6 Weeks",
+        "Within 8 Weeks"
+      ]
     }
   }
 }
