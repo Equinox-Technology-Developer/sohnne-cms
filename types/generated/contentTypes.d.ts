@@ -920,8 +920,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'Within 10-20 Business Days',
         'Within 20-25 Business Days',
         'Within 3-4 Weeks',
-        'Within 6 Weeks',
-        'Within 8 Weeks'
+        'Within 7-8 Weeks',
+        'Within 9-10 Weeks'
       ]
     >;
     createdAt: Attribute.DateTime;
