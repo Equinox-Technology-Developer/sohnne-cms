@@ -924,6 +924,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'Within 9-10 Weeks'
       ]
     >;
+    badge_text: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

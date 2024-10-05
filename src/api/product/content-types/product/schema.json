@@ -139,6 +139,9 @@
         "Within 7-8 Weeks",
         "Within 9-10 Weeks"
       ]
+    },
+    "badge_text": {
+      "type": "string"
     }
   }
 }
