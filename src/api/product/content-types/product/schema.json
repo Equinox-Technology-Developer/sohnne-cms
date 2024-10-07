@@ -142,6 +142,16 @@
     },
     "badge_text": {
       "type": "string"
+    },
+    "banner_video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

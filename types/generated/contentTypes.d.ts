@@ -925,6 +925,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       ]
     >;
     badge_text: Attribute.String;
+    banner_video: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
