@@ -926,10 +926,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     badge_text: Attribute.String;
     media_banner: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    product_3d_url: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 5000;
-      }>;
     ar_qrcode: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     stock_status: Attribute.Enumeration<['In Stock', 'Out of Stock']>;
     url_3d_view: Attribute.Text &

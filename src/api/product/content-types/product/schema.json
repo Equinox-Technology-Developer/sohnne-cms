@@ -154,10 +154,6 @@
         "audios"
       ]
     },
-    "product_3d_url": {
-      "type": "string",
-      "maxLength": 5000
-    },
     "ar_qrcode": {
       "type": "media",
       "multiple": false,
