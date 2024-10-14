@@ -926,6 +926,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     badge_text: Attribute.String;
     media_banner: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    product_3d_url: Attribute.String;
+    ar_qrcode: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

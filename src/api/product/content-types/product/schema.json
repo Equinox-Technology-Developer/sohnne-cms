@@ -153,6 +153,19 @@
         "videos",
         "audios"
       ]
+    },
+    "product_3d_url": {
+      "type": "string"
+    },
+    "ar_qrcode": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
