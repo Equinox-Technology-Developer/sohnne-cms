@@ -158,14 +158,22 @@
       "type": "string"
     },
     "ar_qrcode": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "stock_status": {
+      "type": "enumeration",
+      "enum": [
+        "In Stock",
+        "Out of Stock"
+      ]
     }
   }
 }

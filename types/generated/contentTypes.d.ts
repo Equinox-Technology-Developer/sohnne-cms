@@ -928,6 +928,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     media_banner: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     product_3d_url: Attribute.String;
     ar_qrcode: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    stock_status: Attribute.Enumeration<['In Stock', 'Out of Stock']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
