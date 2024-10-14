@@ -175,6 +175,10 @@
         "In Stock",
         "Out of Stock"
       ]
+    },
+    "url_3d_view": {
+      "type": "text",
+      "maxLength": 10000
     }
   }
 }

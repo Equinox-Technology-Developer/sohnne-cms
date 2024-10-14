@@ -932,6 +932,10 @@ export interface ApiProductProduct extends Schema.CollectionType {
       }>;
     ar_qrcode: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     stock_status: Attribute.Enumeration<['In Stock', 'Out of Stock']>;
+    url_3d_view: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 10000;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
