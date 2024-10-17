@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shipping_shipping_variants",
+  "info": {
+    "displayName": "Shipping Variant",
+    "icon": "exit"
+  },
+  "options": {},
+  "attributes": {
+    "country_code": {
+      "type": "string"
+    },
+    "cbm_1": {
+      "type": "decimal"
+    },
+    "cbm_2": {
+      "type": "decimal"
+    },
+    "cbm_3": {
+      "type": "decimal"
+    },
+    "cbm_4": {
+      "type": "decimal"
+    }
+  }
+}

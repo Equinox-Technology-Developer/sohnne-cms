@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipping_classes",
+  "info": {
+    "singularName": "shipping-class",
+    "pluralName": "shipping-classes",
+    "displayName": "Shipping Class"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shipping_name": {
+      "type": "string"
+    },
+    "shipping_partners": {
+      "displayName": "Shipping Variant",
+      "type": "component",
+      "repeatable": true,
+      "component": "shipping.shipping-variant"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "shipping_classes"
+    }
+  }
+}

@@ -176,6 +176,12 @@
     "url_3d_view": {
       "type": "text",
       "maxLength": 10000
+    },
+    "shipping_classes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::shipping-class.shipping-class",
+      "mappedBy": "products"
     }
   }
 }

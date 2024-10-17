@@ -933,6 +933,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 10000;
       }>;
+    shipping_classes: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::shipping-class.shipping-class'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -944,6 +949,42 @@ export interface ApiProductProduct extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiShippingClassShippingClass extends Schema.CollectionType {
+  collectionName: 'shipping_classes';
+  info: {
+    singularName: 'shipping-class';
+    pluralName: 'shipping-classes';
+    displayName: 'Shipping Class';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    shipping_name: Attribute.String;
+    shipping_partners: Attribute.Component<'shipping.shipping-variant', true>;
+    products: Attribute.Relation<
+      'api::shipping-class.shipping-class',
+      'manyToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shipping-class.shipping-class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shipping-class.shipping-class',
       'oneToOne',
       'admin::user'
     > &
@@ -972,6 +1013,7 @@ declare module '@strapi/types' {
       'api::collection.collection': ApiCollectionCollection;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
+      'api::shipping-class.shipping-class': ApiShippingClassShippingClass;
     }
   }
 }
