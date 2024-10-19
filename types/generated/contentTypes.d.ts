@@ -938,6 +938,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::shipping-class.shipping-class'
     >;
+    meta_title: Attribute.String;
+    meta_description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

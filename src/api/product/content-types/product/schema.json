@@ -182,6 +182,12 @@
       "relation": "manyToMany",
       "target": "api::shipping-class.shipping-class",
       "mappedBy": "products"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
     }
   }
 }
