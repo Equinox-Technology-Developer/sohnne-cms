@@ -811,6 +811,8 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     slug: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     show_collections: Attribute.Boolean & Attribute.DefaultTo<false>;
+    meta_title: Attribute.String;
+    meta_description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -856,6 +858,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     services: Attribute.Component<'home-page.trusted-by-section', true>;
     b2b_section: Attribute.Component<'home-page.b2-b-section'>;
     instagram_feed: Attribute.Component<'home-page.instagram-feed'>;
+    meta_title: Attribute.String;
+    meta_description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

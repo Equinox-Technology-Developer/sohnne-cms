@@ -75,6 +75,12 @@
       "type": "component",
       "repeatable": false,
       "component": "home-page.instagram-feed"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
     }
   }
 }
