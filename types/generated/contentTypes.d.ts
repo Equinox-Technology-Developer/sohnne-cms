@@ -992,6 +992,31 @@ export interface ApiShippingClassShippingClass extends Schema.CollectionType {
   };
 }
 
+export interface ApiTaxTax extends Schema.CollectionType {
+  collectionName: 'taxes';
+  info: {
+    singularName: 'tax';
+    pluralName: 'taxes';
+    displayName: 'Tax';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    country_code: Attribute.String;
+    state_code: Attribute.String;
+    name: Attribute.String;
+    tax_rate: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::tax.tax', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::tax.tax', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1014,6 +1039,7 @@ declare module '@strapi/types' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
       'api::shipping-class.shipping-class': ApiShippingClassShippingClass;
+      'api::tax.tax': ApiTaxTax;
     }
   }
 }

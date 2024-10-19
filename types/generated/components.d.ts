@@ -13,21 +13,6 @@ export interface TableTable extends Schema.Component {
   };
 }
 
-export interface ShippingShippingVariant extends Schema.Component {
-  collectionName: 'components_shipping_shipping_variants';
-  info: {
-    displayName: 'Shipping Variant';
-    icon: 'exit';
-  };
-  attributes: {
-    country_code: Attribute.String;
-    cbm_1: Attribute.Decimal;
-    cbm_2: Attribute.Decimal;
-    cbm_3: Attribute.Decimal;
-    cbm_4: Attribute.Decimal;
-  };
-}
-
 export interface ProductVariant extends Schema.Component {
   collectionName: 'components_product_variants';
   info: {
@@ -332,11 +317,25 @@ export interface HomePageAffirmSection extends Schema.Component {
   };
 }
 
+export interface ShippingShippingVariant extends Schema.Component {
+  collectionName: 'components_shipping_shipping_variants';
+  info: {
+    displayName: 'Shipping Variant';
+    icon: 'exit';
+  };
+  attributes: {
+    country_code: Attribute.String;
+    cbm_1: Attribute.Decimal;
+    cbm_2: Attribute.Decimal;
+    cbm_3: Attribute.Decimal;
+    cbm_4: Attribute.Decimal;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'table.table': TableTable;
-      'shipping.shipping-variant': ShippingShippingVariant;
       'product.variant': ProductVariant;
       'product.quote-card': ProductQuoteCard;
       'product.product-recommendation': ProductProductRecommendation;
@@ -360,6 +359,7 @@ declare module '@strapi/types' {
       'home-page.customer-review': HomePageCustomerReview;
       'home-page.b2-b-section': HomePageB2BSection;
       'home-page.affirm-section': HomePageAffirmSection;
+      'shipping.shipping-variant': ShippingShippingVariant;
     }
   }
 }

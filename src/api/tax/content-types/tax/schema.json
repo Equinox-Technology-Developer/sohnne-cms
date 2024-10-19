@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "taxes",
+  "info": {
+    "singularName": "tax",
+    "pluralName": "taxes",
+    "displayName": "Tax"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "country_code": {
+      "type": "string"
+    },
+    "state_code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tax_rate": {
+      "type": "decimal"
+    }
+  }
+}
