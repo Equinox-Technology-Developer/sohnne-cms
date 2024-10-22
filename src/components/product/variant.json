@@ -41,6 +41,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "shipping_class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shipping-class.shipping-class"
     }
   }
 }

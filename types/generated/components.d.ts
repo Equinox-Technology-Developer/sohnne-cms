@@ -31,6 +31,11 @@ export interface ProductVariant extends Schema.Component {
       Attribute.DefaultTo<false>;
     discount_price: Attribute.Decimal & Attribute.Required;
     gallery: Attribute.Media<'images', true> & Attribute.Required;
+    shipping_class: Attribute.Relation<
+      'product.variant',
+      'oneToOne',
+      'api::shipping-class.shipping-class'
+    >;
   };
 }
 
