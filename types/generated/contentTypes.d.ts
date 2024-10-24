@@ -923,6 +923,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'Within 7-10 Business Days',
         'Within 10-20 Business Days',
         'Within 20-25 Business Days',
+        'Within 2-3 Weeks',
         'Within 3-4 Weeks',
         'Within 4-6 Weeks',
         'Within 7-8 Weeks',
