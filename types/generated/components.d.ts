@@ -51,6 +51,7 @@ export interface ProductVariant extends Schema.Component {
       'oneToOne',
       'api::shipping-class.shipping-class'
     >;
+    cbm: Attribute.Decimal;
   };
 }
 
