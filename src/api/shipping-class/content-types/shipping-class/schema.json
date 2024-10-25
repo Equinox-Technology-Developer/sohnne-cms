@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shipping-class",
     "pluralName": "shipping-classes",
-    "displayName": "Shipping Class"
+    "displayName": "Shipping Class",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,6 +26,9 @@
       "relation": "manyToMany",
       "target": "api::product.product",
       "inversedBy": "shipping_classes"
+    },
+    "display_name": {
+      "type": "string"
     }
   }
 }

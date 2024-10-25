@@ -969,6 +969,7 @@ export interface ApiShippingClassShippingClass extends Schema.CollectionType {
     singularName: 'shipping-class';
     pluralName: 'shipping-classes';
     displayName: 'Shipping Class';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -981,6 +982,7 @@ export interface ApiShippingClassShippingClass extends Schema.CollectionType {
       'manyToMany',
       'api::product.product'
     >;
+    display_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
