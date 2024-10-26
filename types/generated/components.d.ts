@@ -18,6 +18,7 @@ export interface ShippingShippingVariant extends Schema.Component {
   info: {
     displayName: 'Shipping Variant';
     icon: 'exit';
+    description: '';
   };
   attributes: {
     country_code: Attribute.String;
@@ -25,6 +26,20 @@ export interface ShippingShippingVariant extends Schema.Component {
     cbm_2: Attribute.Decimal;
     cbm_3: Attribute.Decimal;
     cbm_4: Attribute.Decimal;
+    cbm_5: Attribute.Decimal;
+    cbm_6: Attribute.Decimal;
+    cbm_7: Attribute.Decimal;
+    cbm_8: Attribute.Decimal;
+    cbm_9: Attribute.Decimal;
+    cbm_10: Attribute.Decimal;
+    cbm_11: Attribute.Decimal;
+    cbm_12: Attribute.Decimal;
+    cbm_13: Attribute.Decimal;
+    cbm_14: Attribute.Decimal;
+    cbm_15: Attribute.Decimal;
+    cbm_16: Attribute.Decimal;
+    cbm_17: Attribute.Decimal;
+    cbm_18: Attribute.Decimal;
   };
 }
 

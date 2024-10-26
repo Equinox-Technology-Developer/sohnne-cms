@@ -2,7 +2,8 @@
   "collectionName": "components_shipping_shipping_variants",
   "info": {
     "displayName": "Shipping Variant",
-    "icon": "exit"
+    "icon": "exit",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -19,6 +20,48 @@
       "type": "decimal"
     },
     "cbm_4": {
+      "type": "decimal"
+    },
+    "cbm_5": {
+      "type": "decimal"
+    },
+    "cbm_6": {
+      "type": "decimal"
+    },
+    "cbm_7": {
+      "type": "decimal"
+    },
+    "cbm_8": {
+      "type": "decimal"
+    },
+    "cbm_9": {
+      "type": "decimal"
+    },
+    "cbm_10": {
+      "type": "decimal"
+    },
+    "cbm_11": {
+      "type": "decimal"
+    },
+    "cbm_12": {
+      "type": "decimal"
+    },
+    "cbm_13": {
+      "type": "decimal"
+    },
+    "cbm_14": {
+      "type": "decimal"
+    },
+    "cbm_15": {
+      "type": "decimal"
+    },
+    "cbm_16": {
+      "type": "decimal"
+    },
+    "cbm_17": {
+      "type": "decimal"
+    },
+    "cbm_18": {
       "type": "decimal"
     }
   }
