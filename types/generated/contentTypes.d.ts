@@ -920,6 +920,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     estimated_delivery_product: Attribute.Enumeration<
       [
         'Within 2-5 Business Days',
+        'Within 2-7 Business Days',
         'Within 7-10 Business Days',
         'Within 10-20 Business Days',
         'Within 20-25 Business Days',
