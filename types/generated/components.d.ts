@@ -1,48 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface TableTable extends Schema.Component {
-  collectionName: 'components_table_tables';
-  info: {
-    displayName: 'Table';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    content: Attribute.String;
-  };
-}
-
-export interface ShippingShippingVariant extends Schema.Component {
-  collectionName: 'components_shipping_shipping_variants';
-  info: {
-    displayName: 'Shipping Variant';
-    icon: 'exit';
-    description: '';
-  };
-  attributes: {
-    country_code: Attribute.String;
-    cbm_1: Attribute.Decimal;
-    cbm_2: Attribute.Decimal;
-    cbm_3: Attribute.Decimal;
-    cbm_4: Attribute.Decimal;
-    cbm_5: Attribute.Decimal;
-    cbm_6: Attribute.Decimal;
-    cbm_7: Attribute.Decimal;
-    cbm_8: Attribute.Decimal;
-    cbm_9: Attribute.Decimal;
-    cbm_10: Attribute.Decimal;
-    cbm_11: Attribute.Decimal;
-    cbm_12: Attribute.Decimal;
-    cbm_13: Attribute.Decimal;
-    cbm_14: Attribute.Decimal;
-    cbm_15: Attribute.Decimal;
-    cbm_16: Attribute.Decimal;
-    cbm_17: Attribute.Decimal;
-    cbm_18: Attribute.Decimal;
-  };
-}
-
 export interface ProductVariant extends Schema.Component {
   collectionName: 'components_product_variants';
   info: {
@@ -181,6 +138,63 @@ export interface ProductComparisonBoolean extends Schema.Component {
     title: Attribute.String;
     sohnne_value: Attribute.Boolean;
     competitor_value: Attribute.Component<'product.competitor', true>;
+  };
+}
+
+export interface OptionsOptions extends Schema.Component {
+  collectionName: 'components_options_options';
+  info: {
+    displayName: 'options';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+    original_price: Attribute.Float;
+    discount_price: Attribute.Float;
+    is_discount: Attribute.Boolean;
+  };
+}
+
+export interface TableTable extends Schema.Component {
+  collectionName: 'components_table_tables';
+  info: {
+    displayName: 'Table';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
+export interface ShippingShippingVariant extends Schema.Component {
+  collectionName: 'components_shipping_shipping_variants';
+  info: {
+    displayName: 'Shipping Variant';
+    icon: 'exit';
+    description: '';
+  };
+  attributes: {
+    country_code: Attribute.String;
+    cbm_1: Attribute.Decimal;
+    cbm_2: Attribute.Decimal;
+    cbm_3: Attribute.Decimal;
+    cbm_4: Attribute.Decimal;
+    cbm_5: Attribute.Decimal;
+    cbm_6: Attribute.Decimal;
+    cbm_7: Attribute.Decimal;
+    cbm_8: Attribute.Decimal;
+    cbm_9: Attribute.Decimal;
+    cbm_10: Attribute.Decimal;
+    cbm_11: Attribute.Decimal;
+    cbm_12: Attribute.Decimal;
+    cbm_13: Attribute.Decimal;
+    cbm_14: Attribute.Decimal;
+    cbm_15: Attribute.Decimal;
+    cbm_16: Attribute.Decimal;
+    cbm_17: Attribute.Decimal;
+    cbm_18: Attribute.Decimal;
   };
 }
 
@@ -356,8 +370,6 @@ export interface HomePageAffirmSection extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'table.table': TableTable;
-      'shipping.shipping-variant': ShippingShippingVariant;
       'product.variant': ProductVariant;
       'product.quote-card': ProductQuoteCard;
       'product.product-recommendation': ProductProductRecommendation;
@@ -368,6 +380,9 @@ declare module '@strapi/types' {
       'product.competitor-name': ProductCompetitorName;
       'product.comparison-text': ProductComparisonText;
       'product.comparison-boolean': ProductComparisonBoolean;
+      'options.options': OptionsOptions;
+      'table.table': TableTable;
+      'shipping.shipping-variant': ShippingShippingVariant;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
       'home-page.services-section': HomePageServicesSection;

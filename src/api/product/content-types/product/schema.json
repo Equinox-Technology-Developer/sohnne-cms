@@ -190,6 +190,18 @@
     },
     "meta_description": {
       "type": "text"
+    },
+    "product_variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::variant.variant"
+    },
+    "image_list": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

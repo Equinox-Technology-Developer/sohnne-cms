@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_options_options",
+  "info": {
+    "displayName": "options",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "original_price": {
+      "type": "float"
+    },
+    "discount_price": {
+      "type": "float"
+    },
+    "is_discount": {
+      "type": "boolean"
+    }
+  }
+}

@@ -946,6 +946,12 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     meta_title: Attribute.String;
     meta_description: Attribute.Text;
+    product_variants: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::variant.variant'
+    >;
+    image_list: Attribute.Media<'images', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1027,6 +1033,40 @@ export interface ApiTaxTax extends Schema.CollectionType {
   };
 }
 
+export interface ApiVariantVariant extends Schema.CollectionType {
+  collectionName: 'variants';
+  info: {
+    singularName: 'variant';
+    pluralName: 'variants';
+    displayName: 'Variant';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Label: Attribute.String;
+    Type: Attribute.Enumeration<['label', 'image']>;
+    option: Attribute.Component<'options.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::variant.variant',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::variant.variant',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1050,6 +1090,7 @@ declare module '@strapi/types' {
       'api::product.product': ApiProductProduct;
       'api::shipping-class.shipping-class': ApiShippingClassShippingClass;
       'api::tax.tax': ApiTaxTax;
+      'api::variant.variant': ApiVariantVariant;
     }
   }
 }
