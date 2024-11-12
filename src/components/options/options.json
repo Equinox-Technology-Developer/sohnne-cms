@@ -17,6 +17,12 @@
     },
     "is_discount": {
       "type": "boolean"
+    },
+    "is_default": {
+      "type": "boolean"
+    },
+    "label": {
+      "type": "string"
     }
   }
 }
