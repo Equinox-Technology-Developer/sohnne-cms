@@ -952,6 +952,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::variant.variant'
     >;
     image_list: Attribute.Media<'images', true>;
+    canonical_url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

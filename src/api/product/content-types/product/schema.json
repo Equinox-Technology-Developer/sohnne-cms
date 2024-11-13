@@ -197,11 +197,15 @@
       "target": "api::variant.variant"
     },
     "image_list": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "canonical_url": {
+      "type": "string"
     }
   }
 }
