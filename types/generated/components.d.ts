@@ -43,22 +43,6 @@ export interface ShippingShippingVariant extends Schema.Component {
   };
 }
 
-export interface OptionsOptions extends Schema.Component {
-  collectionName: 'components_options_options';
-  info: {
-    displayName: 'options';
-    description: '';
-  };
-  attributes: {
-    value: Attribute.String;
-    original_price: Attribute.Float;
-    discount_price: Attribute.Float;
-    is_discount: Attribute.Boolean;
-    is_default: Attribute.Boolean;
-    label: Attribute.String;
-  };
-}
-
 export interface ProductVariant extends Schema.Component {
   collectionName: 'components_product_variants';
   info: {
@@ -197,6 +181,23 @@ export interface ProductComparisonBoolean extends Schema.Component {
     title: Attribute.String;
     sohnne_value: Attribute.Boolean;
     competitor_value: Attribute.Component<'product.competitor', true>;
+  };
+}
+
+export interface OptionsOptions extends Schema.Component {
+  collectionName: 'components_options_options';
+  info: {
+    displayName: 'options';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+    original_price: Attribute.Float;
+    discount_price: Attribute.Float;
+    is_discount: Attribute.Boolean;
+    is_default: Attribute.Boolean;
+    label: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
   };
 }
 
@@ -374,7 +375,6 @@ declare module '@strapi/types' {
     export interface Components {
       'table.table': TableTable;
       'shipping.shipping-variant': ShippingShippingVariant;
-      'options.options': OptionsOptions;
       'product.variant': ProductVariant;
       'product.quote-card': ProductQuoteCard;
       'product.product-recommendation': ProductProductRecommendation;
@@ -385,6 +385,7 @@ declare module '@strapi/types' {
       'product.competitor-name': ProductCompetitorName;
       'product.comparison-text': ProductComparisonText;
       'product.comparison-boolean': ProductComparisonBoolean;
+      'options.options': OptionsOptions;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
       'home-page.services-section': HomePageServicesSection;
