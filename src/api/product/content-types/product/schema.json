@@ -206,9 +206,6 @@
     },
     "canonical_url": {
       "type": "string"
-    },
-    "variant_combination": {
-      "type": "json"
     }
   }
 }
