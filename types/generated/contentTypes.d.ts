@@ -906,7 +906,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       Attribute.Required;
     dimension_image_mobile: Attribute.Media<'images'> & Attribute.Required;
     dimensions: Attribute.Component<'table.table', true> & Attribute.Required;
-    variants: Attribute.Component<'product.variant', true> & Attribute.Required;
+    variants: Attribute.Component<'product.variant', true>;
     icon_features: Attribute.Component<'product.icons', true>;
     detail_products: Attribute.Component<'product.detail-products', true>;
     in_the_box: Attribute.Component<'product.in-the-box', true>;

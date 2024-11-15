@@ -79,7 +79,7 @@
       "type": "component",
       "repeatable": true,
       "component": "product.variant",
-      "required": true
+      "required": false
     },
     "icon_features": {
       "type": "component",
