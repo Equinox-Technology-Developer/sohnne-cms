@@ -813,6 +813,7 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     show_collections: Attribute.Boolean & Attribute.DefaultTo<false>;
     meta_title: Attribute.String;
     meta_description: Attribute.Text;
+    canonical_url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
