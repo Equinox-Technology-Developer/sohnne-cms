@@ -861,6 +861,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     instagram_feed: Attribute.Component<'home-page.instagram-feed'>;
     meta_title: Attribute.String;
     meta_description: Attribute.Text;
+    video_reels: Attribute.Component<'home-page.video-reels'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -81,6 +81,12 @@
     },
     "meta_description": {
       "type": "text"
+    },
+    "video_reels": {
+      "displayName": "video-reels",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.video-reels"
     }
   }
 }
