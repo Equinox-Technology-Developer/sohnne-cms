@@ -210,6 +210,11 @@
     },
     "variant_combination": {
       "type": "json"
+    },
+    "video_reels": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.video-reels"
     }
   }
 }

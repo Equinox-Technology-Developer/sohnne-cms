@@ -158,10 +158,10 @@ export interface HomePageVideoReels extends Schema.Component {
   collectionName: 'components_home_page_video_reels';
   info: {
     displayName: 'video-reels';
+    description: '';
   };
   attributes: {
     heading: Attribute.String;
-    subheading: Attribute.String;
     videos: Attribute.Media<'videos', true>;
   };
 }
@@ -335,23 +335,6 @@ export interface HomePageAffirmSection extends Schema.Component {
   };
 }
 
-export interface OptionsOptions extends Schema.Component {
-  collectionName: 'components_options_options';
-  info: {
-    displayName: 'options';
-    description: '';
-  };
-  attributes: {
-    value: Attribute.String;
-    original_price: Attribute.Float;
-    discount_price: Attribute.Float;
-    is_discount: Attribute.Boolean;
-    is_default: Attribute.Boolean;
-    label: Attribute.String;
-    thumbnail: Attribute.Media<'images'>;
-  };
-}
-
 export interface ShippingShippingVariant extends Schema.Component {
   collectionName: 'components_shipping_shipping_variants';
   info: {
@@ -379,6 +362,23 @@ export interface ShippingShippingVariant extends Schema.Component {
     cbm_16: Attribute.Decimal;
     cbm_17: Attribute.Decimal;
     cbm_18: Attribute.Decimal;
+  };
+}
+
+export interface OptionsOptions extends Schema.Component {
+  collectionName: 'components_options_options';
+  info: {
+    displayName: 'options';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+    original_price: Attribute.Float;
+    discount_price: Attribute.Float;
+    is_discount: Attribute.Boolean;
+    is_default: Attribute.Boolean;
+    label: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
   };
 }
 
@@ -410,8 +410,8 @@ declare module '@strapi/types' {
       'home-page.customer-review': HomePageCustomerReview;
       'home-page.b2-b-section': HomePageB2BSection;
       'home-page.affirm-section': HomePageAffirmSection;
-      'options.options': OptionsOptions;
       'shipping.shipping-variant': ShippingShippingVariant;
+      'options.options': OptionsOptions;
     }
   }
 }
