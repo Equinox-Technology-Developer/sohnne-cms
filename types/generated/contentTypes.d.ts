@@ -958,6 +958,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     canonical_url: Attribute.String;
     variant_combination: Attribute.JSON;
     video_reels: Attribute.Component<'home-page.video-reels'>;
+    image_list_2: Attribute.Media<'images', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
