@@ -959,6 +959,36 @@ export interface ApiProductProduct extends Schema.CollectionType {
     variant_combination: Attribute.JSON;
     video_reels: Attribute.Component<'home-page.video-reels'>;
     image_list_2: Attribute.Media<'images', true>;
+    estimated_delivery_product_eu: Attribute.Enumeration<
+      [
+        'Within 2-5 Business Days',
+        'Within 2-7 Business Days',
+        'Within 7-10 Business Days',
+        'Within 10-20 Business Days',
+        'Within 20-25 Business Days',
+        'Within 1-2 Weeks',
+        'Within 2-3 Weeks',
+        'Within 3-4 Weeks',
+        'Within 4-6 Weeks',
+        'Within 7-8 Weeks',
+        'Within 9-10 Weeks'
+      ]
+    >;
+    estimated_delivery_product_uk: Attribute.Enumeration<
+      [
+        'Within 2-5 Business Days',
+        'Within 2-7 Business Days',
+        'Within 7-10 Business Days',
+        'Within 10-20 Business Days',
+        'Within 20-25 Business Days',
+        'Within 1-2 Weeks',
+        'Within 2-3 Weeks',
+        'Within 3-4 Weeks',
+        'Within 4-6 Weeks',
+        'Within 7-8 Weeks',
+        'Within 9-10 Weeks'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
