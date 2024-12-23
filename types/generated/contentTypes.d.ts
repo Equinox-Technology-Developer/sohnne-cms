@@ -1007,6 +1007,36 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiReferralPageReferralPage extends Schema.SingleType {
+  collectionName: 'referral_pages';
+  info: {
+    singularName: 'referral-page';
+    pluralName: 'referral-pages';
+    displayName: 'Referral Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::referral-page.referral-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::referral-page.referral-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiShippingClassShippingClass extends Schema.CollectionType {
   collectionName: 'shipping_classes';
   info: {
@@ -1125,6 +1155,7 @@ declare module '@strapi/types' {
       'api::collection.collection': ApiCollectionCollection;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
+      'api::referral-page.referral-page': ApiReferralPageReferralPage;
       'api::shipping-class.shipping-class': ApiShippingClassShippingClass;
       'api::tax.tax': ApiTaxTax;
       'api::variant.variant': ApiVariantVariant;
