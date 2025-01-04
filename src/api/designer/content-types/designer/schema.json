@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "designers",
+  "info": {
+    "singularName": "designer",
+    "pluralName": "designers",
+    "displayName": "Designer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "biography": {
+      "type": "blocks"
+    },
+    "collection_banner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

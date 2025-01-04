@@ -832,6 +832,41 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
   };
 }
 
+export interface ApiDesignerDesigner extends Schema.CollectionType {
+  collectionName: 'designers';
+  info: {
+    singularName: 'designer';
+    pluralName: 'designers';
+    displayName: 'Designer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    country: Attribute.String;
+    avatar: Attribute.Media<'images'>;
+    instagram: Attribute.String;
+    biography: Attribute.Blocks;
+    collection_banner: Attribute.Media<'images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::designer.designer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::designer.designer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -1153,6 +1188,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::collection.collection': ApiCollectionCollection;
+      'api::designer.designer': ApiDesignerDesigner;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product.product': ApiProductProduct;
       'api::referral-page.referral-page': ApiReferralPageReferralPage;
