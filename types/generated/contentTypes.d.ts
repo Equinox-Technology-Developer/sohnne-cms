@@ -838,6 +838,7 @@ export interface ApiDesignerDesigner extends Schema.CollectionType {
     singularName: 'designer';
     pluralName: 'designers';
     displayName: 'Designer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -846,9 +847,13 @@ export interface ApiDesignerDesigner extends Schema.CollectionType {
     name: Attribute.String;
     country: Attribute.String;
     avatar: Attribute.Media<'images'>;
-    instagram: Attribute.String;
     biography: Attribute.Blocks;
     collection_banner: Attribute.Media<'images'>;
+    products: Attribute.Relation<
+      'api::designer.designer',
+      'oneToMany',
+      'api::product.product'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "designer",
     "pluralName": "designers",
-    "displayName": "Designer"
+    "displayName": "Designer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,24 +19,28 @@
       "type": "string"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "instagram": {
-      "type": "string"
+      ]
     },
     "biography": {
       "type": "blocks"
     },
     "collection_banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
     }
   }
 }
