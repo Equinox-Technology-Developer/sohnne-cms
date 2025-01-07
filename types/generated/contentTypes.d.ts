@@ -854,6 +854,7 @@ export interface ApiDesignerDesigner extends Schema.CollectionType {
       'oneToMany',
       'api::product.product'
     >;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -41,6 +41,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
