@@ -335,6 +335,28 @@ export interface HomePageAffirmSection extends Schema.Component {
   };
 }
 
+export interface CollectionFaq extends Schema.Component {
+  collectionName: 'components_collection_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    question: Attribute.String;
+    answer: Attribute.Blocks;
+  };
+}
+
+export interface CollectionDescriptionCollection extends Schema.Component {
+  collectionName: 'components_collection_description_collections';
+  info: {
+    displayName: 'description_collection';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Blocks;
+  };
+}
+
 export interface ShippingShippingVariant extends Schema.Component {
   collectionName: 'components_shipping_shipping_variants';
   info: {
@@ -362,17 +384,6 @@ export interface ShippingShippingVariant extends Schema.Component {
     cbm_16: Attribute.Decimal;
     cbm_17: Attribute.Decimal;
     cbm_18: Attribute.Decimal;
-  };
-}
-
-export interface CollectionFaq extends Schema.Component {
-  collectionName: 'components_collection_faqs';
-  info: {
-    displayName: 'FAQ';
-  };
-  attributes: {
-    question: Attribute.String;
-    answer: Attribute.Blocks;
   };
 }
 
@@ -421,8 +432,9 @@ declare module '@strapi/types' {
       'home-page.customer-review': HomePageCustomerReview;
       'home-page.b2-b-section': HomePageB2BSection;
       'home-page.affirm-section': HomePageAffirmSection;
-      'shipping.shipping-variant': ShippingShippingVariant;
       'collection.faq': CollectionFaq;
+      'collection.description-collection': CollectionDescriptionCollection;
+      'shipping.shipping-variant': ShippingShippingVariant;
       'options.options': OptionsOptions;
     }
   }

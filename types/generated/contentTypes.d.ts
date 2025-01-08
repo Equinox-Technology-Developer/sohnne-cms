@@ -815,6 +815,10 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     meta_description: Attribute.Text;
     canonical_url: Attribute.String;
     faqs: Attribute.Component<'collection.faq', true>;
+    description_collection: Attribute.Component<
+      'collection.description-collection',
+      true
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

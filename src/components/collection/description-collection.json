@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_collection_description_collections",
+  "info": {
+    "displayName": "description_collection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}
