@@ -14,7 +14,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "products": {
       "type": "relation",
@@ -25,7 +25,7 @@
     "thumbnail_desktop": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -33,7 +33,7 @@
     "banner": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -41,11 +41,11 @@
     "slug": {
       "type": "string",
       "regex": "^\\S*$",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "show_collections": {
       "type": "boolean",

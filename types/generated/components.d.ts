@@ -335,34 +335,6 @@ export interface HomePageAffirmSection extends Schema.Component {
   };
 }
 
-export interface CollectionFaq extends Schema.Component {
-  collectionName: 'components_collection_faqs';
-  info: {
-    displayName: 'FAQ';
-  };
-  attributes: {
-    question: Attribute.String;
-    answer: Attribute.Blocks;
-  };
-}
-
-export interface OptionsOptions extends Schema.Component {
-  collectionName: 'components_options_options';
-  info: {
-    displayName: 'options';
-    description: '';
-  };
-  attributes: {
-    value: Attribute.String;
-    original_price: Attribute.Float;
-    discount_price: Attribute.Float;
-    is_discount: Attribute.Boolean;
-    is_default: Attribute.Boolean;
-    label: Attribute.String;
-    thumbnail: Attribute.Media<'images'>;
-  };
-}
-
 export interface ShippingShippingVariant extends Schema.Component {
   collectionName: 'components_shipping_shipping_variants';
   info: {
@@ -390,6 +362,34 @@ export interface ShippingShippingVariant extends Schema.Component {
     cbm_16: Attribute.Decimal;
     cbm_17: Attribute.Decimal;
     cbm_18: Attribute.Decimal;
+  };
+}
+
+export interface CollectionFaq extends Schema.Component {
+  collectionName: 'components_collection_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    question: Attribute.String;
+    answer: Attribute.Blocks;
+  };
+}
+
+export interface OptionsOptions extends Schema.Component {
+  collectionName: 'components_options_options';
+  info: {
+    displayName: 'options';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+    original_price: Attribute.Float;
+    discount_price: Attribute.Float;
+    is_discount: Attribute.Boolean;
+    is_default: Attribute.Boolean;
+    label: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
   };
 }
 
@@ -421,9 +421,9 @@ declare module '@strapi/types' {
       'home-page.customer-review': HomePageCustomerReview;
       'home-page.b2-b-section': HomePageB2BSection;
       'home-page.affirm-section': HomePageAffirmSection;
+      'shipping.shipping-variant': ShippingShippingVariant;
       'collection.faq': CollectionFaq;
       'options.options': OptionsOptions;
-      'shipping.shipping-variant': ShippingShippingVariant;
     }
   }
 }

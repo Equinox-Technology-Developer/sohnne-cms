@@ -800,16 +800,16 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
+    name: Attribute.String;
     products: Attribute.Relation<
       'api::collection.collection',
       'manyToMany',
       'api::product.product'
     >;
-    thumbnail_desktop: Attribute.Media<'images'> & Attribute.Required;
-    banner: Attribute.Media<'images'> & Attribute.Required;
-    slug: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    thumbnail_desktop: Attribute.Media<'images'>;
+    banner: Attribute.Media<'images'>;
+    slug: Attribute.String;
+    description: Attribute.Text;
     show_collections: Attribute.Boolean & Attribute.DefaultTo<false>;
     meta_title: Attribute.String;
     meta_description: Attribute.Text;
@@ -934,22 +934,21 @@ export interface ApiProductProduct extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.String;
+    slug: Attribute.String & Attribute.Unique;
     collections: Attribute.Relation<
       'api::product.product',
       'manyToMany',
       'api::collection.collection'
     >;
-    descriptions: Attribute.Blocks & Attribute.Required;
-    features: Attribute.Blocks & Attribute.Required;
+    descriptions: Attribute.Blocks;
+    features: Attribute.Blocks;
     Assembly: Attribute.Media<'videos'>;
-    care_instructions: Attribute.Blocks & Attribute.Required;
-    dimension_image_desktop: Attribute.Media<'images'> & Attribute.Required;
-    specifications: Attribute.Component<'table.table', true> &
-      Attribute.Required;
-    dimension_image_mobile: Attribute.Media<'images'> & Attribute.Required;
-    dimensions: Attribute.Component<'table.table', true> & Attribute.Required;
+    care_instructions: Attribute.Blocks;
+    dimension_image_desktop: Attribute.Media<'images'>;
+    specifications: Attribute.Component<'table.table', true>;
+    dimension_image_mobile: Attribute.Media<'images'>;
+    dimensions: Attribute.Component<'table.table', true>;
     variants: Attribute.Component<'product.variant', true>;
     icon_features: Attribute.Component<'product.icons', true>;
     detail_products: Attribute.Component<'product.detail-products', true>;

@@ -14,12 +14,12 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "slug": {
       "type": "string",
       "unique": true,
-      "required": true
+      "required": false
     },
     "collections": {
       "type": "relation",
@@ -29,11 +29,11 @@
     },
     "descriptions": {
       "type": "blocks",
-      "required": true
+      "required": false
     },
     "features": {
       "type": "blocks",
-      "required": true
+      "required": false
     },
     "Assembly": {
       "type": "media",
@@ -45,12 +45,12 @@
     },
     "care_instructions": {
       "type": "blocks",
-      "required": true
+      "required": false
     },
     "dimension_image_desktop": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -59,12 +59,12 @@
       "type": "component",
       "repeatable": true,
       "component": "table.table",
-      "required": true
+      "required": false
     },
     "dimension_image_mobile": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -73,7 +73,7 @@
       "type": "component",
       "repeatable": true,
       "component": "table.table",
-      "required": true
+      "required": false
     },
     "variants": {
       "type": "component",
