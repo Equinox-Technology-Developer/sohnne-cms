@@ -59,6 +59,12 @@
     },
     "canonical_url": {
       "type": "string"
+    },
+    "faqs": {
+      "displayName": "FAQ",
+      "type": "component",
+      "repeatable": true,
+      "component": "collection.faq"
     }
   }
 }
