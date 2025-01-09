@@ -819,6 +819,16 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
       'collection.description-collection',
       true
     >;
+    collections: Attribute.Relation<
+      'api::collection.collection',
+      'oneToMany',
+      'api::collection.collection'
+    >;
+    collection: Attribute.Relation<
+      'api::collection.collection',
+      'manyToOne',
+      'api::collection.collection'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
