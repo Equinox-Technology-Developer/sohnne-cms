@@ -13,36 +13,6 @@ export interface TableTable extends Schema.Component {
   };
 }
 
-export interface ShippingShippingVariant extends Schema.Component {
-  collectionName: 'components_shipping_shipping_variants';
-  info: {
-    displayName: 'Shipping Variant';
-    icon: 'exit';
-    description: '';
-  };
-  attributes: {
-    country_code: Attribute.String;
-    cbm_1: Attribute.Decimal;
-    cbm_2: Attribute.Decimal;
-    cbm_3: Attribute.Decimal;
-    cbm_4: Attribute.Decimal;
-    cbm_5: Attribute.Decimal;
-    cbm_6: Attribute.Decimal;
-    cbm_7: Attribute.Decimal;
-    cbm_8: Attribute.Decimal;
-    cbm_9: Attribute.Decimal;
-    cbm_10: Attribute.Decimal;
-    cbm_11: Attribute.Decimal;
-    cbm_12: Attribute.Decimal;
-    cbm_13: Attribute.Decimal;
-    cbm_14: Attribute.Decimal;
-    cbm_15: Attribute.Decimal;
-    cbm_16: Attribute.Decimal;
-    cbm_17: Attribute.Decimal;
-    cbm_18: Attribute.Decimal;
-  };
-}
-
 export interface ProductVariant extends Schema.Component {
   collectionName: 'components_product_variants';
   info: {
@@ -181,23 +151,6 @@ export interface ProductComparisonBoolean extends Schema.Component {
     title: Attribute.String;
     sohnne_value: Attribute.Boolean;
     competitor_value: Attribute.Component<'product.competitor', true>;
-  };
-}
-
-export interface OptionsOptions extends Schema.Component {
-  collectionName: 'components_options_options';
-  info: {
-    displayName: 'options';
-    description: '';
-  };
-  attributes: {
-    value: Attribute.String;
-    original_price: Attribute.Float;
-    discount_price: Attribute.Float;
-    is_discount: Attribute.Boolean;
-    is_default: Attribute.Boolean;
-    label: Attribute.String;
-    thumbnail: Attribute.Media<'images'>;
   };
 }
 
@@ -382,6 +335,36 @@ export interface HomePageAffirmSection extends Schema.Component {
   };
 }
 
+export interface ShippingShippingVariant extends Schema.Component {
+  collectionName: 'components_shipping_shipping_variants';
+  info: {
+    displayName: 'Shipping Variant';
+    icon: 'exit';
+    description: '';
+  };
+  attributes: {
+    country_code: Attribute.String;
+    cbm_1: Attribute.Decimal;
+    cbm_2: Attribute.Decimal;
+    cbm_3: Attribute.Decimal;
+    cbm_4: Attribute.Decimal;
+    cbm_5: Attribute.Decimal;
+    cbm_6: Attribute.Decimal;
+    cbm_7: Attribute.Decimal;
+    cbm_8: Attribute.Decimal;
+    cbm_9: Attribute.Decimal;
+    cbm_10: Attribute.Decimal;
+    cbm_11: Attribute.Decimal;
+    cbm_12: Attribute.Decimal;
+    cbm_13: Attribute.Decimal;
+    cbm_14: Attribute.Decimal;
+    cbm_15: Attribute.Decimal;
+    cbm_16: Attribute.Decimal;
+    cbm_17: Attribute.Decimal;
+    cbm_18: Attribute.Decimal;
+  };
+}
+
 export interface CollectionFaq extends Schema.Component {
   collectionName: 'components_collection_faqs';
   info: {
@@ -404,11 +387,27 @@ export interface CollectionDescriptionCollection extends Schema.Component {
   };
 }
 
+export interface OptionsOptions extends Schema.Component {
+  collectionName: 'components_options_options';
+  info: {
+    displayName: 'options';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+    original_price: Attribute.Float;
+    discount_price: Attribute.Float;
+    is_discount: Attribute.Boolean;
+    is_default: Attribute.Boolean;
+    label: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'table.table': TableTable;
-      'shipping.shipping-variant': ShippingShippingVariant;
       'product.variant': ProductVariant;
       'product.quote-card': ProductQuoteCard;
       'product.product-recommendation': ProductProductRecommendation;
@@ -419,7 +418,6 @@ declare module '@strapi/types' {
       'product.competitor-name': ProductCompetitorName;
       'product.comparison-text': ProductComparisonText;
       'product.comparison-boolean': ProductComparisonBoolean;
-      'options.options': OptionsOptions;
       'home-page.video-reels': HomePageVideoReels;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
@@ -434,8 +432,10 @@ declare module '@strapi/types' {
       'home-page.customer-review': HomePageCustomerReview;
       'home-page.b2-b-section': HomePageB2BSection;
       'home-page.affirm-section': HomePageAffirmSection;
+      'shipping.shipping-variant': ShippingShippingVariant;
       'collection.faq': CollectionFaq;
       'collection.description-collection': CollectionDescriptionCollection;
+      'options.options': OptionsOptions;
     }
   }
 }

@@ -870,6 +870,8 @@ export interface ApiDesignerDesigner extends Schema.CollectionType {
       'api::product.product'
     >;
     slug: Attribute.String;
+    meta_title: Attribute.String;
+    meta_description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
