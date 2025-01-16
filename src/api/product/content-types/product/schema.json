@@ -208,21 +208,10 @@
     "canonical_url": {
       "type": "string"
     },
-    "variant_combination": {
-      "type": "json"
-    },
     "video_reels": {
       "type": "component",
       "repeatable": false,
       "component": "home-page.video-reels"
-    },
-    "image_list_2": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     },
     "estimated_delivery_product_eu": {
       "type": "enumeration",
@@ -255,6 +244,16 @@
         "Within 7-8 Weeks",
         "Within 9-10 Weeks"
       ]
+    },
+    "materials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::material.material"
+    },
+    "fabric_features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fabric-feature.fabric-feature"
     }
   }
 }

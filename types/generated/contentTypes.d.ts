@@ -890,6 +890,37 @@ export interface ApiDesignerDesigner extends Schema.CollectionType {
   };
 }
 
+export interface ApiFabricFeatureFabricFeature extends Schema.CollectionType {
+  collectionName: 'fabric_features';
+  info: {
+    singularName: 'fabric-feature';
+    pluralName: 'fabric-features';
+    displayName: 'Fabric Feature';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    feature_name: Attribute.String;
+    feature_slug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fabric-feature.fabric-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fabric-feature.fabric-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -931,6 +962,37 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMaterialMaterial extends Schema.CollectionType {
+  collectionName: 'materials';
+  info: {
+    singularName: 'material';
+    pluralName: 'materials';
+    displayName: 'Material';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    material_name: Attribute.String;
+    material_slug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::material.material',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::material.material',
       'oneToOne',
       'admin::user'
     > &
@@ -1013,9 +1075,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     image_list: Attribute.Media<'images', true>;
     canonical_url: Attribute.String;
-    variant_combination: Attribute.JSON;
     video_reels: Attribute.Component<'home-page.video-reels'>;
-    image_list_2: Attribute.Media<'images', true>;
     estimated_delivery_product_eu: Attribute.Enumeration<
       [
         'Within 2-5 Business Days',
@@ -1045,6 +1105,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'Within 7-8 Weeks',
         'Within 9-10 Weeks'
       ]
+    >;
+    materials: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::material.material'
+    >;
+    fabric_features: Attribute.Relation<
+      'api::product.product',
+      'oneToMany',
+      'api::fabric-feature.fabric-feature'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1211,7 +1281,9 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::collection.collection': ApiCollectionCollection;
       'api::designer.designer': ApiDesignerDesigner;
+      'api::fabric-feature.fabric-feature': ApiFabricFeatureFabricFeature;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::material.material': ApiMaterialMaterial;
       'api::product.product': ApiProductProduct;
       'api::referral-page.referral-page': ApiReferralPageReferralPage;
       'api::shipping-class.shipping-class': ApiShippingClassShippingClass;
