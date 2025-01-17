@@ -847,6 +847,43 @@ export interface ApiCollectionCollection extends Schema.CollectionType {
   };
 }
 
+export interface ApiColorColor extends Schema.CollectionType {
+  collectionName: 'colors';
+  info: {
+    singularName: 'color';
+    pluralName: 'colors';
+    displayName: 'Color';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    color_name: Attribute.String;
+    color_slug: Attribute.String;
+    color_hex: Attribute.String;
+    products: Attribute.Relation<
+      'api::color.color',
+      'manyToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::color.color',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::color.color',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDesignerDesigner extends Schema.CollectionType {
   collectionName: 'designers';
   info: {
@@ -883,37 +920,6 @@ export interface ApiDesignerDesigner extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::designer.designer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFabricFeatureFabricFeature extends Schema.CollectionType {
-  collectionName: 'fabric_features';
-  info: {
-    singularName: 'fabric-feature';
-    pluralName: 'fabric-features';
-    displayName: 'Fabric Feature';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    feature_name: Attribute.String;
-    feature_slug: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::fabric-feature.fabric-feature',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::fabric-feature.fabric-feature',
       'oneToOne',
       'admin::user'
     > &
@@ -982,6 +988,11 @@ export interface ApiMaterialMaterial extends Schema.CollectionType {
   attributes: {
     material_name: Attribute.String;
     material_slug: Attribute.String;
+    products: Attribute.Relation<
+      'api::material.material',
+      'manyToMany',
+      'api::product.product'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1108,13 +1119,13 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     materials: Attribute.Relation<
       'api::product.product',
-      'oneToMany',
+      'manyToMany',
       'api::material.material'
     >;
-    fabric_features: Attribute.Relation<
+    colors: Attribute.Relation<
       'api::product.product',
-      'oneToMany',
-      'api::fabric-feature.fabric-feature'
+      'manyToMany',
+      'api::color.color'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1280,8 +1291,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::collection.collection': ApiCollectionCollection;
+      'api::color.color': ApiColorColor;
       'api::designer.designer': ApiDesignerDesigner;
-      'api::fabric-feature.fabric-feature': ApiFabricFeatureFabricFeature;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::material.material': ApiMaterialMaterial;
       'api::product.product': ApiProductProduct;

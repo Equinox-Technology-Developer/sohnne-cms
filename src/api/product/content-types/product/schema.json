@@ -247,13 +247,15 @@
     },
     "materials": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::material.material"
+      "relation": "manyToMany",
+      "target": "api::material.material",
+      "inversedBy": "products"
     },
-    "fabric_features": {
+    "colors": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::fabric-feature.fabric-feature"
+      "relation": "manyToMany",
+      "target": "api::color.color",
+      "inversedBy": "products"
     }
   }
 }
