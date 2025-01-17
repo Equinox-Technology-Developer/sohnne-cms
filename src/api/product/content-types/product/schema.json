@@ -256,6 +256,9 @@
       "relation": "manyToMany",
       "target": "api::color.color",
       "inversedBy": "products"
+    },
+    "filter_price": {
+      "type": "integer"
     }
   }
 }

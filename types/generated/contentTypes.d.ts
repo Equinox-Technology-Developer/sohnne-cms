@@ -1127,6 +1127,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::color.color'
     >;
+    filter_price: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
