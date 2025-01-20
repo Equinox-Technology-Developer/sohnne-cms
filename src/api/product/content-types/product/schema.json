@@ -259,6 +259,9 @@
     },
     "filter_price": {
       "type": "integer"
+    },
+    "short_description": {
+      "type": "text"
     }
   }
 }

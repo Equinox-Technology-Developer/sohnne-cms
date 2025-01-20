@@ -1128,6 +1128,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::color.color'
     >;
     filter_price: Attribute.Integer;
+    short_description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
