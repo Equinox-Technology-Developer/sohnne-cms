@@ -903,7 +903,7 @@ export interface ApiDesignerDesigner extends Schema.CollectionType {
     collection_banner: Attribute.Media<'images'>;
     products: Attribute.Relation<
       'api::designer.designer',
-      'oneToMany',
+      'manyToMany',
       'api::product.product'
     >;
     slug: Attribute.String;
@@ -1129,6 +1129,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     filter_price: Attribute.Integer;
     short_description: Attribute.Text;
+    designers: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::designer.designer'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
