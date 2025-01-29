@@ -1182,6 +1182,36 @@ export interface ApiReferralPageReferralPage extends Schema.SingleType {
   };
 }
 
+export interface ApiRefundPageRefundPage extends Schema.SingleType {
+  collectionName: 'refund_pages';
+  info: {
+    singularName: 'refund-page';
+    pluralName: 'refund-pages';
+    displayName: 'Refund Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::refund-page.refund-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::refund-page.refund-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiShippingClassShippingClass extends Schema.CollectionType {
   collectionName: 'shipping_classes';
   info: {
@@ -1304,6 +1334,7 @@ declare module '@strapi/types' {
       'api::material.material': ApiMaterialMaterial;
       'api::product.product': ApiProductProduct;
       'api::referral-page.referral-page': ApiReferralPageReferralPage;
+      'api::refund-page.refund-page': ApiRefundPageRefundPage;
       'api::shipping-class.shipping-class': ApiShippingClassShippingClass;
       'api::tax.tax': ApiTaxTax;
       'api::variant.variant': ApiVariantVariant;

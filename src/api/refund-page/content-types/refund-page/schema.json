@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "refund_pages",
+  "info": {
+    "singularName": "refund-page",
+    "pluralName": "refund-pages",
+    "displayName": "Refund Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}
