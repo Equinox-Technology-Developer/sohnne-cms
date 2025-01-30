@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "warranties",
+  "info": {
+    "singularName": "warranty",
+    "pluralName": "warranties",
+    "displayName": "Warranty"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

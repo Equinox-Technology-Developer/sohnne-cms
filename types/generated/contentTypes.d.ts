@@ -1490,6 +1490,36 @@ export interface ApiVariantVariant extends Schema.CollectionType {
   };
 }
 
+export interface ApiWarrantyWarranty extends Schema.SingleType {
+  collectionName: 'warranties';
+  info: {
+    singularName: 'warranty';
+    pluralName: 'warranties';
+    displayName: 'Warranty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::warranty.warranty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::warranty.warranty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1525,6 +1555,7 @@ declare module '@strapi/types' {
       'api::tax.tax': ApiTaxTax;
       'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;
       'api::variant.variant': ApiVariantVariant;
+      'api::warranty.warranty': ApiWarrantyWarranty;
     }
   }
 }
