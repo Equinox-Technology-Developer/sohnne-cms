@@ -788,6 +788,36 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAccessibilityAccessibility extends Schema.SingleType {
+  collectionName: 'accessibilities';
+  info: {
+    singularName: 'accessibility';
+    pluralName: 'accessibilities';
+    displayName: 'Accessibility';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::accessibility.accessibility',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::accessibility.accessibility',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCollectionCollection extends Schema.CollectionType {
   collectionName: 'collections';
   info: {
@@ -877,6 +907,36 @@ export interface ApiColorColor extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::color.color',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDeliveryPageDeliveryPage extends Schema.SingleType {
+  collectionName: 'delivery_pages';
+  info: {
+    singularName: 'delivery-page';
+    pluralName: 'delivery-pages';
+    displayName: 'Delivery Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::delivery-page.delivery-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::delivery-page.delivery-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1004,6 +1064,36 @@ export interface ApiMaterialMaterial extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::material.material',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'Privacy Policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
       'oneToOne',
       'admin::user'
     > &
@@ -1152,6 +1242,36 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiPromoTermsPagePromoTermsPage extends Schema.SingleType {
+  collectionName: 'promo_terms_pages';
+  info: {
+    singularName: 'promo-terms-page';
+    pluralName: 'promo-terms-pages';
+    displayName: 'Promo Terms Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promo-terms-page.promo-terms-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promo-terms-page.promo-terms-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiReferralPageReferralPage extends Schema.SingleType {
   collectionName: 'referral_pages';
   info: {
@@ -1250,6 +1370,36 @@ export interface ApiShippingClassShippingClass extends Schema.CollectionType {
   };
 }
 
+export interface ApiSohnneRewardTermSohnneRewardTerm extends Schema.SingleType {
+  collectionName: 'sohnne_reward_terms';
+  info: {
+    singularName: 'sohnne-reward-term';
+    pluralName: 'sohnne-reward-terms';
+    displayName: 'Sohnne Reward Term';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::sohnne-reward-term.sohnne-reward-term',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::sohnne-reward-term.sohnne-reward-term',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTaxTax extends Schema.CollectionType {
   collectionName: 'taxes';
   info: {
@@ -1271,6 +1421,36 @@ export interface ApiTaxTax extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::tax.tax', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::tax.tax', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTermsOfUseTermsOfUse extends Schema.SingleType {
+  collectionName: 'terms_of_uses';
+  info: {
+    singularName: 'terms-of-use';
+    pluralName: 'terms-of-uses';
+    displayName: 'Terms of Use';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-of-use.terms-of-use',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-of-use.terms-of-use',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1327,16 +1507,22 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::accessibility.accessibility': ApiAccessibilityAccessibility;
       'api::collection.collection': ApiCollectionCollection;
       'api::color.color': ApiColorColor;
+      'api::delivery-page.delivery-page': ApiDeliveryPageDeliveryPage;
       'api::designer.designer': ApiDesignerDesigner;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::material.material': ApiMaterialMaterial;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::product.product': ApiProductProduct;
+      'api::promo-terms-page.promo-terms-page': ApiPromoTermsPagePromoTermsPage;
       'api::referral-page.referral-page': ApiReferralPageReferralPage;
       'api::refund-page.refund-page': ApiRefundPageRefundPage;
       'api::shipping-class.shipping-class': ApiShippingClassShippingClass;
+      'api::sohnne-reward-term.sohnne-reward-term': ApiSohnneRewardTermSohnneRewardTerm;
       'api::tax.tax': ApiTaxTax;
+      'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;
       'api::variant.variant': ApiVariantVariant;
     }
   }

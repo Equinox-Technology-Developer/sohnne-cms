@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "sohnne_reward_terms",
+  "info": {
+    "singularName": "sohnne-reward-term",
+    "pluralName": "sohnne-reward-terms",
+    "displayName": "Sohnne Reward Term"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

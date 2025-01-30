@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "delivery_pages",
+  "info": {
+    "singularName": "delivery-page",
+    "pluralName": "delivery-pages",
+    "displayName": "Delivery Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "accessibilities",
+  "info": {
+    "singularName": "accessibility",
+    "pluralName": "accessibilities",
+    "displayName": "Accessibility"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "promo_terms_pages",
+  "info": {
+    "singularName": "promo-terms-page",
+    "pluralName": "promo-terms-pages",
+    "displayName": "Promo Terms Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "blocks"
+    }
+  }
+}
