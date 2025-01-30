@@ -1307,7 +1307,8 @@ export interface ApiRefundPageRefundPage extends Schema.SingleType {
   info: {
     singularName: 'refund-page';
     pluralName: 'refund-pages';
-    displayName: 'Refund Page';
+    displayName: 'Return Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;

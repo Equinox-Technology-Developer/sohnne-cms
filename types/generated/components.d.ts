@@ -184,23 +184,6 @@ export interface ProductComparisonBoolean extends Schema.Component {
   };
 }
 
-export interface OptionsOptions extends Schema.Component {
-  collectionName: 'components_options_options';
-  info: {
-    displayName: 'options';
-    description: '';
-  };
-  attributes: {
-    value: Attribute.String;
-    original_price: Attribute.Float;
-    discount_price: Attribute.Float;
-    is_discount: Attribute.Boolean;
-    is_default: Attribute.Boolean;
-    label: Attribute.String;
-    thumbnail: Attribute.Media<'images'>;
-  };
-}
-
 export interface HomePageVideoReels extends Schema.Component {
   collectionName: 'components_home_page_video_reels';
   info: {
@@ -404,6 +387,23 @@ export interface CollectionDescriptionCollection extends Schema.Component {
   };
 }
 
+export interface OptionsOptions extends Schema.Component {
+  collectionName: 'components_options_options';
+  info: {
+    displayName: 'options';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+    original_price: Attribute.Float;
+    discount_price: Attribute.Float;
+    is_discount: Attribute.Boolean;
+    is_default: Attribute.Boolean;
+    label: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -419,7 +419,6 @@ declare module '@strapi/types' {
       'product.competitor-name': ProductCompetitorName;
       'product.comparison-text': ProductComparisonText;
       'product.comparison-boolean': ProductComparisonBoolean;
-      'options.options': OptionsOptions;
       'home-page.video-reels': HomePageVideoReels;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
@@ -436,6 +435,7 @@ declare module '@strapi/types' {
       'home-page.affirm-section': HomePageAffirmSection;
       'collection.faq': CollectionFaq;
       'collection.description-collection': CollectionDescriptionCollection;
+      'options.options': OptionsOptions;
     }
   }
 }
