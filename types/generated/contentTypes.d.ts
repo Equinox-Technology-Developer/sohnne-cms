@@ -1071,6 +1071,37 @@ export interface ApiMaterialMaterial extends Schema.CollectionType {
   };
 }
 
+export interface ApiPersonalInformationPersonalInformation
+  extends Schema.SingleType {
+  collectionName: 'personal_informations';
+  info: {
+    singularName: 'personal-information';
+    pluralName: 'personal-informations';
+    displayName: 'Personal Information';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::personal-information.personal-information',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::personal-information.personal-information',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
   collectionName: 'privacy_policies';
   info: {
@@ -1545,6 +1576,7 @@ declare module '@strapi/types' {
       'api::designer.designer': ApiDesignerDesigner;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::material.material': ApiMaterialMaterial;
+      'api::personal-information.personal-information': ApiPersonalInformationPersonalInformation;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::product.product': ApiProductProduct;
       'api::promo-terms-page.promo-terms-page': ApiPromoTermsPagePromoTermsPage;
