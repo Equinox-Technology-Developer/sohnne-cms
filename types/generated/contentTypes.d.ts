@@ -1182,7 +1182,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'Within 3-4 Weeks',
         'Within 4-6 Weeks',
         'Within 7-8 Weeks',
-        'Within 9-10 Weeks'
+        'Within 9-10 Weeks',
+        'Within 8-12 Weeks'
       ]
     >;
     badge_text: Attribute.String;

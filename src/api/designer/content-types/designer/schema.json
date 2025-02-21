@@ -41,7 +41,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product",
-      "inversedBy": "designers"
+      "mappedBy": "designers"
     },
     "slug": {
       "type": "string"
