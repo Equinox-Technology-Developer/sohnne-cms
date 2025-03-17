@@ -8,11 +8,16 @@ module.exports = ({ env }) => ({
         region: env('AWS_REGION'),
         params: {
           Bucket: env('AWS_BUCKET_NAME'),
+          ACL: null,
         },
       },
       actionOptions: {
-        upload: {},
-        uploadStream: {},
+        upload: {
+          ACL: null
+        },
+        uploadStream: {
+          ACL: null
+        },
         delete: {},
       },
     },
