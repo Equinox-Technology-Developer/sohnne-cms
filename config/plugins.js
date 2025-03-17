@@ -10,6 +10,8 @@ module.exports = ({ env }) => ({
           Bucket: env('AWS_BUCKET_NAME'),
           ACL: null,
         },
+        baseUrl: null, // This enables signed URLs
+        expires: 60 * 60 * 24 * 365, // 1 year in seconds (maximum allowed)
       },
       actionOptions: {
         upload: {
