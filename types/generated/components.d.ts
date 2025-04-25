@@ -13,216 +13,6 @@ export interface TableTable extends Schema.Component {
   };
 }
 
-export interface ShippingShippingVariant extends Schema.Component {
-  collectionName: 'components_shipping_shipping_variants';
-  info: {
-    displayName: 'Shipping Variant';
-    icon: 'exit';
-    description: '';
-  };
-  attributes: {
-    country_code: Attribute.String;
-    cbm_1: Attribute.Decimal;
-    cbm_2: Attribute.Decimal;
-    cbm_3: Attribute.Decimal;
-    cbm_4: Attribute.Decimal;
-    cbm_5: Attribute.Decimal;
-    cbm_6: Attribute.Decimal;
-    cbm_7: Attribute.Decimal;
-    cbm_8: Attribute.Decimal;
-    cbm_9: Attribute.Decimal;
-    cbm_10: Attribute.Decimal;
-    cbm_11: Attribute.Decimal;
-    cbm_12: Attribute.Decimal;
-    cbm_13: Attribute.Decimal;
-    cbm_14: Attribute.Decimal;
-    cbm_15: Attribute.Decimal;
-    cbm_16: Attribute.Decimal;
-    cbm_17: Attribute.Decimal;
-    cbm_18: Attribute.Decimal;
-  };
-}
-
-export interface CollectionFaq extends Schema.Component {
-  collectionName: 'components_collection_faqs';
-  info: {
-    displayName: 'FAQ';
-  };
-  attributes: {
-    question: Attribute.String;
-    answer: Attribute.Blocks;
-  };
-}
-
-export interface CollectionDescriptionCollection extends Schema.Component {
-  collectionName: 'components_collection_description_collections';
-  info: {
-    displayName: 'description_collection';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Blocks;
-  };
-}
-
-export interface OptionsOptions extends Schema.Component {
-  collectionName: 'components_options_options';
-  info: {
-    displayName: 'options';
-    description: '';
-  };
-  attributes: {
-    value: Attribute.String;
-    original_price: Attribute.Float;
-    discount_price: Attribute.Float;
-    is_discount: Attribute.Boolean;
-    is_default: Attribute.Boolean;
-    label: Attribute.String;
-    thumbnail: Attribute.Media<'images'>;
-  };
-}
-
-export interface ProductVariant extends Schema.Component {
-  collectionName: 'components_product_variants';
-  info: {
-    displayName: 'Variant';
-    icon: 'archive';
-    description: '';
-  };
-  attributes: {
-    type: Attribute.Enumeration<['General', 'Color', 'Material']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'General'>;
-    value: Attribute.String & Attribute.Required;
-    price: Attribute.Decimal & Attribute.Required;
-    is_discount: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    discount_price: Attribute.Decimal & Attribute.Required;
-    gallery: Attribute.Media<'images', true> & Attribute.Required;
-    shipping_class: Attribute.Relation<
-      'product.variant',
-      'oneToOne',
-      'api::shipping-class.shipping-class'
-    >;
-    cbm: Attribute.Decimal;
-  };
-}
-
-export interface ProductQuoteCard extends Schema.Component {
-  collectionName: 'components_product_quote_cards';
-  info: {
-    displayName: 'Quote Card';
-    description: '';
-  };
-  attributes: {
-    quote: Attribute.Text;
-    author: Attribute.String;
-    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface ProductProductRecommendation extends Schema.Component {
-  collectionName: 'components_product_product_recommendations';
-  info: {
-    displayName: 'Product Recommendation';
-    description: '';
-  };
-  attributes: {
-    heading: Attribute.String;
-    products: Attribute.Relation<
-      'product.product-recommendation',
-      'oneToMany',
-      'api::product.product'
-    >;
-  };
-}
-
-export interface ProductInTheBox extends Schema.Component {
-  collectionName: 'components_product_in_the_boxes';
-  info: {
-    displayName: 'In The Box';
-    description: '';
-  };
-  attributes: {
-    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    item_name: Attribute.String;
-  };
-}
-
-export interface ProductIcons extends Schema.Component {
-  collectionName: 'components_product_icons';
-  info: {
-    displayName: 'Icons';
-    icon: 'stack';
-  };
-  attributes: {
-    text: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 25;
-      }>;
-    icon: Attribute.Media<'images'>;
-  };
-}
-
-export interface ProductDetailProducts extends Schema.Component {
-  collectionName: 'components_product_detail_products';
-  info: {
-    displayName: 'Detail Products';
-  };
-  attributes: {
-    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    heading: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface ProductCompetitor extends Schema.Component {
-  collectionName: 'components_product_competitors';
-  info: {
-    displayName: 'competitor boolean';
-    description: '';
-  };
-  attributes: {
-    competitor_boolean: Attribute.Boolean;
-  };
-}
-
-export interface ProductCompetitorName extends Schema.Component {
-  collectionName: 'components_product_competitor_names';
-  info: {
-    displayName: 'Competitor Name';
-  };
-  attributes: {
-    brand_name: Attribute.String;
-  };
-}
-
-export interface ProductComparisonText extends Schema.Component {
-  collectionName: 'components_product_comparison_texts';
-  info: {
-    displayName: 'Comparison Text';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    sohnne_value: Attribute.String;
-    competitor_value: Attribute.Component<'product.competitor-name', true>;
-  };
-}
-
-export interface ProductComparisonBoolean extends Schema.Component {
-  collectionName: 'components_product_comparison_booleans';
-  info: {
-    displayName: 'Comparison Boolean';
-  };
-  attributes: {
-    title: Attribute.String;
-    sohnne_value: Attribute.Boolean;
-    competitor_value: Attribute.Component<'product.competitor', true>;
-  };
-}
-
 export interface HomePageVideoReels extends Schema.Component {
   collectionName: 'components_home_page_video_reels';
   info: {
@@ -404,24 +194,220 @@ export interface HomePageAffirmSection extends Schema.Component {
   };
 }
 
+export interface ProductVariant extends Schema.Component {
+  collectionName: 'components_product_variants';
+  info: {
+    displayName: 'Variant';
+    icon: 'archive';
+    description: '';
+  };
+  attributes: {
+    type: Attribute.Enumeration<['General', 'Color', 'Material']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'General'>;
+    value: Attribute.String & Attribute.Required;
+    price: Attribute.Decimal & Attribute.Required;
+    is_discount: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    discount_price: Attribute.Decimal & Attribute.Required;
+    gallery: Attribute.Media<'images', true> & Attribute.Required;
+    shipping_class: Attribute.Relation<
+      'product.variant',
+      'oneToOne',
+      'api::shipping-class.shipping-class'
+    >;
+    cbm: Attribute.Decimal;
+  };
+}
+
+export interface ProductQuoteCard extends Schema.Component {
+  collectionName: 'components_product_quote_cards';
+  info: {
+    displayName: 'Quote Card';
+    description: '';
+  };
+  attributes: {
+    quote: Attribute.Text;
+    author: Attribute.String;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface ProductProductRecommendation extends Schema.Component {
+  collectionName: 'components_product_product_recommendations';
+  info: {
+    displayName: 'Product Recommendation';
+    description: '';
+  };
+  attributes: {
+    heading: Attribute.String;
+    products: Attribute.Relation<
+      'product.product-recommendation',
+      'oneToMany',
+      'api::product.product'
+    >;
+  };
+}
+
+export interface ProductInTheBox extends Schema.Component {
+  collectionName: 'components_product_in_the_boxes';
+  info: {
+    displayName: 'In The Box';
+    description: '';
+  };
+  attributes: {
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    item_name: Attribute.String;
+  };
+}
+
+export interface ProductIcons extends Schema.Component {
+  collectionName: 'components_product_icons';
+  info: {
+    displayName: 'Icons';
+    icon: 'stack';
+  };
+  attributes: {
+    text: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 25;
+      }>;
+    icon: Attribute.Media<'images'>;
+  };
+}
+
+export interface ProductDetailProducts extends Schema.Component {
+  collectionName: 'components_product_detail_products';
+  info: {
+    displayName: 'Detail Products';
+  };
+  attributes: {
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    heading: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface ProductCompetitor extends Schema.Component {
+  collectionName: 'components_product_competitors';
+  info: {
+    displayName: 'competitor boolean';
+    description: '';
+  };
+  attributes: {
+    competitor_boolean: Attribute.Boolean;
+  };
+}
+
+export interface ProductCompetitorName extends Schema.Component {
+  collectionName: 'components_product_competitor_names';
+  info: {
+    displayName: 'Competitor Name';
+  };
+  attributes: {
+    brand_name: Attribute.String;
+  };
+}
+
+export interface ProductComparisonText extends Schema.Component {
+  collectionName: 'components_product_comparison_texts';
+  info: {
+    displayName: 'Comparison Text';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    sohnne_value: Attribute.String;
+    competitor_value: Attribute.Component<'product.competitor-name', true>;
+  };
+}
+
+export interface ProductComparisonBoolean extends Schema.Component {
+  collectionName: 'components_product_comparison_booleans';
+  info: {
+    displayName: 'Comparison Boolean';
+  };
+  attributes: {
+    title: Attribute.String;
+    sohnne_value: Attribute.Boolean;
+    competitor_value: Attribute.Component<'product.competitor', true>;
+  };
+}
+
+export interface ShippingShippingVariant extends Schema.Component {
+  collectionName: 'components_shipping_shipping_variants';
+  info: {
+    displayName: 'Shipping Variant';
+    icon: 'exit';
+    description: '';
+  };
+  attributes: {
+    country_code: Attribute.String;
+    cbm_1: Attribute.Decimal;
+    cbm_2: Attribute.Decimal;
+    cbm_3: Attribute.Decimal;
+    cbm_4: Attribute.Decimal;
+    cbm_5: Attribute.Decimal;
+    cbm_6: Attribute.Decimal;
+    cbm_7: Attribute.Decimal;
+    cbm_8: Attribute.Decimal;
+    cbm_9: Attribute.Decimal;
+    cbm_10: Attribute.Decimal;
+    cbm_11: Attribute.Decimal;
+    cbm_12: Attribute.Decimal;
+    cbm_13: Attribute.Decimal;
+    cbm_14: Attribute.Decimal;
+    cbm_15: Attribute.Decimal;
+    cbm_16: Attribute.Decimal;
+    cbm_17: Attribute.Decimal;
+    cbm_18: Attribute.Decimal;
+  };
+}
+
+export interface OptionsOptions extends Schema.Component {
+  collectionName: 'components_options_options';
+  info: {
+    displayName: 'options';
+    description: '';
+  };
+  attributes: {
+    value: Attribute.String;
+    original_price: Attribute.Float;
+    discount_price: Attribute.Float;
+    is_discount: Attribute.Boolean;
+    is_default: Attribute.Boolean;
+    label: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
+  };
+}
+
+export interface CollectionFaq extends Schema.Component {
+  collectionName: 'components_collection_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    question: Attribute.String;
+    answer: Attribute.Blocks;
+  };
+}
+
+export interface CollectionDescriptionCollection extends Schema.Component {
+  collectionName: 'components_collection_description_collections';
+  info: {
+    displayName: 'description_collection';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Blocks;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'table.table': TableTable;
-      'shipping.shipping-variant': ShippingShippingVariant;
-      'collection.faq': CollectionFaq;
-      'collection.description-collection': CollectionDescriptionCollection;
-      'options.options': OptionsOptions;
-      'product.variant': ProductVariant;
-      'product.quote-card': ProductQuoteCard;
-      'product.product-recommendation': ProductProductRecommendation;
-      'product.in-the-box': ProductInTheBox;
-      'product.icons': ProductIcons;
-      'product.detail-products': ProductDetailProducts;
-      'product.competitor': ProductCompetitor;
-      'product.competitor-name': ProductCompetitorName;
-      'product.comparison-text': ProductComparisonText;
-      'product.comparison-boolean': ProductComparisonBoolean;
       'home-page.video-reels': HomePageVideoReels;
       'home-page.video-banner': HomePageVideoBanner;
       'home-page.trusted-by-section': HomePageTrustedBySection;
@@ -436,6 +422,20 @@ declare module '@strapi/types' {
       'home-page.customer-review': HomePageCustomerReview;
       'home-page.b2-b-section': HomePageB2BSection;
       'home-page.affirm-section': HomePageAffirmSection;
+      'product.variant': ProductVariant;
+      'product.quote-card': ProductQuoteCard;
+      'product.product-recommendation': ProductProductRecommendation;
+      'product.in-the-box': ProductInTheBox;
+      'product.icons': ProductIcons;
+      'product.detail-products': ProductDetailProducts;
+      'product.competitor': ProductCompetitor;
+      'product.competitor-name': ProductCompetitorName;
+      'product.comparison-text': ProductComparisonText;
+      'product.comparison-boolean': ProductComparisonBoolean;
+      'shipping.shipping-variant': ShippingShippingVariant;
+      'options.options': OptionsOptions;
+      'collection.faq': CollectionFaq;
+      'collection.description-collection': CollectionDescriptionCollection;
     }
   }
 }

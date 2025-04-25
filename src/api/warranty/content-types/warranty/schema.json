@@ -4,16 +4,15 @@
   "info": {
     "singularName": "warranty",
     "pluralName": "warranties",
-    "displayName": "Warranty",
-    "description": ""
+    "displayName": "Warranty"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Content": {
-      "type": "blocks"
+    "text": {
+      "type": "richtext"
     }
   }
 }

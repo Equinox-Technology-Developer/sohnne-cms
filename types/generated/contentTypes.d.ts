@@ -1528,13 +1528,12 @@ export interface ApiWarrantyWarranty extends Schema.SingleType {
     singularName: 'warranty';
     pluralName: 'warranties';
     displayName: 'Warranty';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Content: Attribute.Blocks;
+    text: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
