@@ -4,7 +4,8 @@
   "info": {
     "singularName": "terms-of-use",
     "pluralName": "terms-of-uses",
-    "displayName": "Terms of Use"
+    "displayName": "Terms of Use",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,9 @@
   "attributes": {
     "text": {
       "type": "blocks"
+    },
+    "markdown": {
+      "type": "richtext"
     }
   }
 }

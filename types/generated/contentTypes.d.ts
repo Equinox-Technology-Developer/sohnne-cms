@@ -590,6 +590,53 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -741,65 +788,20 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
-  info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiAccessibilityAccessibility extends Schema.SingleType {
   collectionName: 'accessibilities';
   info: {
     singularName: 'accessibility';
     pluralName: 'accessibilities';
     displayName: 'Accessibility';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     text: Attribute.Blocks;
+    markdown: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1108,12 +1110,14 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
     singularName: 'privacy-policy';
     pluralName: 'privacy-policies';
     displayName: 'Privacy Policy';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     text: Attribute.Blocks;
+    markdown: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1280,12 +1284,14 @@ export interface ApiPromoTermsPagePromoTermsPage extends Schema.SingleType {
     singularName: 'promo-terms-page';
     pluralName: 'promo-terms-pages';
     displayName: 'Promo Terms Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     text: Attribute.Blocks;
+    markdown: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1409,12 +1415,14 @@ export interface ApiSohnneRewardTermSohnneRewardTerm extends Schema.SingleType {
     singularName: 'sohnne-reward-term';
     pluralName: 'sohnne-reward-terms';
     displayName: 'Sohnne Reward Term';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     text: Attribute.Blocks;
+    markdown: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1464,12 +1472,14 @@ export interface ApiTermsOfUseTermsOfUse extends Schema.SingleType {
     singularName: 'terms-of-use';
     pluralName: 'terms-of-uses';
     displayName: 'Terms of Use';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     text: Attribute.Blocks;
+    markdown: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1566,10 +1576,10 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
       'api::accessibility.accessibility': ApiAccessibilityAccessibility;
       'api::collection.collection': ApiCollectionCollection;
       'api::color.color': ApiColorColor;
