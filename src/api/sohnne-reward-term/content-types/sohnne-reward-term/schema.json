@@ -4,8 +4,7 @@
   "info": {
     "singularName": "sohnne-reward-term",
     "pluralName": "sohnne-reward-terms",
-    "displayName": "Sohnne Reward Term",
-    "description": ""
+    "displayName": "Sohnne Reward Term"
   },
   "options": {
     "draftAndPublish": true
@@ -14,9 +13,6 @@
   "attributes": {
     "text": {
       "type": "blocks"
-    },
-    "markdown": {
-      "type": "richtext"
     }
   }
 }

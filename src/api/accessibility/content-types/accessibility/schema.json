@@ -4,8 +4,7 @@
   "info": {
     "singularName": "accessibility",
     "pluralName": "accessibilities",
-    "displayName": "Accessibility",
-    "description": ""
+    "displayName": "Accessibility"
   },
   "options": {
     "draftAndPublish": true
@@ -14,9 +13,6 @@
   "attributes": {
     "text": {
       "type": "blocks"
-    },
-    "markdown": {
-      "type": "richtext"
     }
   }
 }

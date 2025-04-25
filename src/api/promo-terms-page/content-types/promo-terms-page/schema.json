@@ -4,8 +4,7 @@
   "info": {
     "singularName": "promo-terms-page",
     "pluralName": "promo-terms-pages",
-    "displayName": "Promo Terms Page",
-    "description": ""
+    "displayName": "Promo Terms Page"
   },
   "options": {
     "draftAndPublish": true
@@ -14,9 +13,6 @@
   "attributes": {
     "text": {
       "type": "blocks"
-    },
-    "markdown": {
-      "type": "richtext"
     }
   }
 }
